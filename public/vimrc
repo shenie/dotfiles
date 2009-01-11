@@ -1,0 +1,14 @@
+syntax on
+set noautoindent
+set showcmd
+set ruler
+set incsearch
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set number
+set ignorecase
+set smartcase
+set hlsearch
+set background=dark
+set nobackup

@@ -1,0 +1,15 @@
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[user]
+	name = <%= SETTINGS['name'] %>
+	email = <%= SETTINGS['email'] %>
+[apply]
+	whitespace = nowarn
+[alias]
+	co = checkout
+	st = status
+	ci = commit
+[core]
+	excludesfile = <%= PUBLIC_DIR %>/git/gitignore

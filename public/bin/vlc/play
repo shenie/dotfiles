@@ -1,0 +1,3 @@
+#!/usr/bin/env osascript
+
+tell app "VLC" to play

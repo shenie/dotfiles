@@ -1,0 +1,142 @@
+. ~/.git-completion.sh
+
+export PS1='\h[\!@$(date "+%H%M%S")]:\w $(__git_ps1 "(%s) ")\u\$ '
+export GREP_OPTIONS='--color=auto'
+export GREP_COLOR='1;33'
+
+PATH=/usr/local/bin:/usr/local/sbin:/usr/local/git/bin:.:${PATH}:${HOME}/bin:/usr/local/mysql/bin
+export MANPATH=/usr/local/git/man:$MANPATH
+
+# comment out less setting because it is screwing up git pager
+# export LESS=-i
+
+## command shortcuts
+alias title='echo -n -e "\033]0;`hostname -s`:`pwd`\007"'
+alias mv='mv -i'
+alias cp='cp -i'
+alias h=history
+alias dir='ls -l'
+alias ls='ls -aF'
+alias doc='cd Documents'
+
+export JAVA_HOME=/Library/Java/Home
+export ANT_HOME=/Developer/Java/Ant
+
+alias mate=/Applications/TextMate.app/Contents/Resources/mate
+alias _mm='mate app config db doc lib public test Rakefile vendor/plugins spec'
+
+mm() {
+  if [ $# -eq 1 ] ; then
+    pushd $1
+    _mm
+    popd
+  else
+    _mm
+  fi
+}
+
+#export GEM_HOME=/Library/Ruby/Gems/1.8
+#export GEM_PATH=/usr/lib/ruby/gems/1.8
+
+alias rake="rake --rakelibdir=$HOME/.rakelib/"
+
+alias ss='script/server $*'
+alias sc='script/console $*'
+alias sg='script/generate $*'
+alias sgm='script/generate migration $*'
+alias sgs='script/generate scaffold $*'
+alias ssc='script/spec -O spec/spec.opts'
+
+alias rrs='rake spec'
+
+alias g='git'
+alias gst='git status'
+alias gl='git pull'
+alias gp='git push'
+alias gd='git diff'
+alias gc='git commit -v'
+alias gca='git commit -v -a'
+alias gci='git commit'
+alias gb='git branch'
+alias gba='git branch -a'
+alias ga='git add'
+alias gdc='git diff --cached'
+alias gu='git reset HEAD'
+alias gco='git checkout'
+# make performance better by doing a 
+alias gr='git repack -a -d'
+alias grm='git rebase master'
+alias gcm='git checkout master'
+alias gka='gitk --all'
+
+# Declare as a function so it can be called in shell scripts
+gnp() {
+  branch=`__git_ps1 "%s"`
+  if [ "${branch}" == "" ] ; then
+    echo "ERROR: Not a branch"
+    return 1
+  fi
+  remote=`git config --get branch.${branch}.remote`
+  if [ "$remote" == "" ] ; then
+    echo "ERROR: ${branch} is not tracking remote"
+    return 1
+  fi
+  
+  merge=`git config --get branch.${branch}.merge | cut -d / -f 3`
+  if [ "$merge" == "" ] ; then
+    echo "ERROR: ${branch} is not auto merging"
+    return 1
+  fi
+  
+  git cherry -v ${remote}/${merge}
+}
+
+# Find directories that are under the control of git or svn
+vcsdir() { 
+  arg=`echo $1 | sed -e's/\/$//'`
+  if [ $# -ne 1 ] ; then
+    arg="."
+  fi
+  
+  find "$arg" -mindepth 2 -maxdepth 2 -name .svn -or -name .git -type d | sed -e's/\.svn//' -e's/\.git//'
+}
+
+gitdir() {
+  arg=`echo $1 | sed -e's/\/$//'`
+  if [ $# -ne 1 ] ; then
+    arg="."
+  fi
+
+  find "$arg" -mindepth 2 -maxdepth 2 -name .git -type d 2>/dev/null | sed -e's/\.git//' 
+}
+
+alias cpr=~/bin/check_push_required.sh
+alias cdw=~/bin/check_dirty_working_dir.sh
+alias cprp='cpr | grep "/" | while read dir; do pushd $dir; git push; popd; done'
+alias ggl='gitdir | while read dir; do pushd $dir >/dev/null; git pull; popd >/dev/null; done'
+
+alias svnadd='svn st | egrep "^\?" | while read st file; do svn add "$file"; done;'
+alias svnrm='svn st | egrep "^!" | while read st file; do svn rm "$file"; done;'
+alias svnrevert='svn st | egrep "^[MCDA]" | while read st file; do svn revert "$file"; done;'
+alias svnopen='svn st | sed -e"s/\?//" | xargs open'
+
+pushdgem() {
+  pushd `gem which $1 | tail -1 | sed -e's/^\(.*\/\).*$/\1/'`
+}
+
+# The mcd function will change directory and set terminal title to match current path
+# If I define the function as cd then calling the function doesn't respond.
+# It seems like it is in an infinite loop.
+mcd() {
+  if [ "$1" == "" ] ; then
+    cd
+  fi
+
+  cd "$1"
+  title
+}
+
+# This alias seems to resolve the infinite loop problem described in mcd
+alias cd='mcd'
+
+alias hsp="hack && rake && ship"

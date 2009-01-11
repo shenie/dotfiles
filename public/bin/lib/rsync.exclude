@@ -1,0 +1,7 @@
+Microsoft User Data
+.DS_Store
+.localize
+*.class
+.eclipse
+*.swp
+*.log

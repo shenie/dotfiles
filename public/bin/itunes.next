@@ -1,0 +1,2 @@
+
+osascript -e 'tell app "iTunes" to next track'
