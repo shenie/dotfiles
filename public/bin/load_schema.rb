@@ -6,9 +6,9 @@ require 'active_record'
 ActiveRecord::Base.establish_connection(
   :adapter  => "mysql",
   :host     => "localhost",
-  :username => ARGV[1],
-  :password => ARGV[2] || "",
-  :database => ARGV[0]
+  :username => ARGV[2],
+  :password => ARGV[3] || "",
+  :database => ARGV[1]
 )
 
 load(ARGV[0])
