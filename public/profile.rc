@@ -23,7 +23,7 @@ export JAVA_HOME=/Library/Java/Home
 export ANT_HOME=/Developer/Java/Ant
 
 alias mate=/Applications/TextMate.app/Contents/Resources/mate
-alias _mm='mate app config db doc lib public test Rakefile vendor/plugins spec'
+alias _mm='mate app config db doc lib public test Rakefile spec'
 
 mm() {
   if [ $# -eq 1 ] ; then
