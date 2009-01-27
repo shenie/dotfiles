@@ -13,3 +13,5 @@
 	ci = commit
 [core]
 	excludesfile = <%= PUBLIC_DIR %>/git/gitignore
+[branch]
+  autosetupmerge = true
