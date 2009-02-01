@@ -68,6 +68,7 @@ alias gr='git repack -a -d'
 alias grm='git rebase master'
 alias gcm='git checkout master'
 alias gka='gitk --all'
+alias gitrm='git st | grep deleted  | sed -e"s/^.*deleted://" | xargs git rm'
 
 # Declare as a function so it can be called in shell scripts
 gnp() {
