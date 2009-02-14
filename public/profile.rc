@@ -1,6 +1,7 @@
 . ~/.git-completion.sh
 
-export PS1='\[\e[37;40m\]\h[\! $(date "+%H:%M:%S")]:\[\e[33;40m\]\w \[\e[34;1m\]$(__git_ps1 "(%s) ")\[\e[33;1m\]\u\$ \]\e[0m\]'
+export PS1='\[\e[37;40m\]\h[\! $(date "+%H:%M:%S")]:\[\e[33;40m\]\w \[\e[34;1m\]$(__git_ps1 "(%s) ")\[\e[33;1m\]\u\$ \[\e[0m\]'
+
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;33'
 
