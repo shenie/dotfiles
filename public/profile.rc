@@ -1,6 +1,6 @@
 . ~/.git-completion.sh
 
-export PS1='\h[\!@$(date "+%H%M%S")]:\w $(__git_ps1 "(%s) ")\u\$ '
+export PS1='\[\e[33;1m\]\h[\!@$(date "+%H%M%S")]:\w $(__git_ps1 "(%s) ")\u\$ \]\e[0m\]'
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;33'
 
@@ -20,7 +20,7 @@ alias ls='ls -aF'
 alias doc='cd Documents'
 
 export JAVA_HOME=/Library/Java/Home
-export ANT_HOME=/Developer/Java/Ant
+export ANT_HOME=/usr/share/ant
 
 alias mate=/Applications/TextMate.app/Contents/Resources/mate
 alias _mm='mate app config db/migrate doc lib public test Rakefile spec'
