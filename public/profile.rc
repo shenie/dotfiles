@@ -47,6 +47,7 @@ alias sg='script/generate $*'
 alias sgm='script/generate migration $*'
 alias sgs='script/generate scaffold $*'
 alias ssc='script/spec -O spec/spec.opts'
+alias apr='touch tmp/restart.txt; sudo apachectl restart'
 
 alias rrs='rake spec'
 
