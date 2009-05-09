@@ -97,7 +97,7 @@ gitdir() {
     arg="."
   fi
 
-  find "$arg" -mindepth 2 -maxdepth 2 -name .git -type d 2>/dev/null | sed -e's/\.git//' 
+  find "$arg" -mindepth 2 -maxdepth 2 -name .git -type d 2>/dev/null | sed -e's/\.git$//' 
 }
 
 alias cpr=~/bin/check_push_required.sh
