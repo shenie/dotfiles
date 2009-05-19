@@ -5,7 +5,7 @@ export PS1='\[\e[37;40m\]\! [$(date "+%H:%M")] \u@\h:\[\e[33;40m\]\w \[\e[34;1m\
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;33'
 
-PATH=/usr/local/bin:/usr/local/sbin:/usr/local/git/bin:.:${PATH}:${HOME}/bin:/usr/local/mysql/bin
+PATH=/usr/local/bin:/usr/local/sbin:/usr/local/git/bin:.:${PATH}:${HOME}/bin:/usr/local/mysql/bin:/Library/PostgreSQL/8.3/bin
 export MANPATH=/usr/local/git/man:$MANPATH
 
 # comment out less setting because it is screwing up git pager
