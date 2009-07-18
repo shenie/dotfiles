@@ -1,2 +1,0 @@
-
-osascript -e "tell app \"iTunes\" to set sound volume to sound volume $1"
