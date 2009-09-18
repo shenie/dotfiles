@@ -23,18 +23,18 @@ alias doc='cd Documents'
 export JAVA_HOME=/Library/Java/Home
 export ANT_HOME=/usr/share/ant
 
-alias mate=/Applications/TextMate.app/Contents/Resources/mate
-alias _mm='mate app config db/migrate doc lib public test Rakefile spec'
-
-mm() {
-  if [ $# -eq 1 ] ; then
-    pushd $1
-    _mm
-    popd
-  else
-    _mm
-  fi
-}
+# alias mate=/Applications/TextMate.app/Contents/Resources/mate
+# alias _mm='mate app config db/migrate doc lib public test Rakefile spec'
+# 
+# mm() {
+#   if [ $# -eq 1 ] ; then
+#     pushd $1
+#     _mm
+#     popd
+#   else
+#     _mm
+#   fi
+# }
 
 #export GEM_HOME=/Library/Ruby/Gems/1.8
 #export GEM_PATH=/usr/lib/ruby/gems/1.8
@@ -106,10 +106,10 @@ alias cdw=~/bin/check_dirty_working_dir.sh
 alias cprp='cpr | grep "/" | while read dir; do pushd $dir; git push; popd; done'
 alias ggl='gitdir | while read dir; do pushd $dir >/dev/null; git pull; popd >/dev/null; done'
 
-alias svnadd='svn st | egrep "^\?" | while read st file; do svn add "$file"; done;'
-alias svnrm='svn st | egrep "^!" | while read st file; do svn rm "$file"; done;'
-alias svnrevert='svn st | egrep "^[MCDA]" | while read st file; do svn revert "$file"; done;'
-alias svnopen='svn st | sed -e"s/\?//" | xargs open'
+# alias svnadd='svn st | egrep "^\?" | while read st file; do svn add "$file"; done;'
+# alias svnrm='svn st | egrep "^!" | while read st file; do svn rm "$file"; done;'
+# alias svnrevert='svn st | egrep "^[MCDA]" | while read st file; do svn revert "$file"; done;'
+# alias svnopen='svn st | sed -e"s/\?//" | xargs open'
 
 pushdgem() {
   pushd `gem which $1 | tail -1 | sed -e's/^\(.*\/\).*$/\1/'`
