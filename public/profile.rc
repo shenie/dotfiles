@@ -115,6 +115,35 @@ pushdgem() {
   pushd `gem which $1 | tail -1 | sed -e's/^\(.*\/\).*$/\1/'`
 }
 
+f_check_ahead() {
+  gitdir $1 | while read repos
+  do
+    pushd $repos >/dev/null
+    
+    has_origin=`git branch -a | grep -c origin`
+    if [ $has_origin -ne 0 ] ; then
+      diff=`gnp | wc -l`
+      if [ $diff -ne 0 ] ; then
+        echo $repos
+      fi
+    fi
+    popd >/dev/null
+  done
+}
+
+f_check_dirty() {
+  gitdir $1 | while read repos
+  do
+    pushd $repos >/dev/null
+    
+    status_count=`git status | grep 'nothing to commit' | wc -l`
+    if [ $status_count -ne 1 ] ; then
+      echo $repos
+    fi
+    popd >/dev/null
+  done
+}
+
 # The mcd function will change directory and set terminal title to match current path
 # If I define the function as cd then calling the function doesn't respond.
 # It seems like it is in an infinite loop.
