@@ -101,10 +101,8 @@ gitdir() {
   find "$arg" -mindepth 2 -maxdepth 2 -name .git -type d 2>/dev/null | sed -e's/\.git$//' 
 }
 
-alias cpr=~/bin/check_push_required.sh
-alias cdw=~/bin/check_dirty_working_dir.sh
-alias cprp='cpr | grep "/" | while read dir; do pushd $dir; git push; popd; done'
-alias ggl='gitdir | while read dir; do pushd $dir >/dev/null; git pull; popd >/dev/null; done'
+# alias cprp='cpr | grep "/" | while read dir; do pushd $dir; git push; popd; done'
+# alias ggl='gitdir | while read dir; do pushd $dir >/dev/null; git pull; popd >/dev/null; done'
 
 # alias svnadd='svn st | egrep "^\?" | while read st file; do svn add "$file"; done;'
 # alias svnrm='svn st | egrep "^!" | while read st file; do svn rm "$file"; done;'
