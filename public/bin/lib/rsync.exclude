@@ -1,6 +1,7 @@
 Microsoft User Data
 .DS_Store
 .localize
+.localized
 *.class
 .eclipse
 *.swp
