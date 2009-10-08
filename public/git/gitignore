@@ -2,3 +2,4 @@
 .idea
 CVS
 .svn
+*.class
