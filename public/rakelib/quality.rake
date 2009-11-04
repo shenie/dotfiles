@@ -2,7 +2,7 @@ require 'flog'
 require 'flay'
 require 'roodi'
 require 'roodi_task'
-require 'metric_fu'
+#require 'metric_fu'
 
 desc "Analyze for code complexity"
 task :flog do
@@ -33,4 +33,5 @@ end
 
 RoodiTask.new 'roodi', ['app/**/*.rb'], 'roodi.yml'
 
-task :quality => [:flog, :flay, :roodi, 'metrics:all']
+task :quality => [:flog, :flay, :roodi]
+#task :quality => [:flog, :flay, :roodi, 'metrics:all']
