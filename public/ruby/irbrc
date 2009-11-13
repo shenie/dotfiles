@@ -13,6 +13,13 @@ rescue LoadError => err
   warn "Couldn't load Wirble: #{err}"
 end
 
+begin
+  require 'hirb'
+  Hirb.enable
+rescue LoadError => err
+  warn "Couldn't load hirb: #{err}"
+end
+
 alias :q :exit
 
 current_dir = Dir.pwd.split('/')[-1]
