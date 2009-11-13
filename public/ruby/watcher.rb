@@ -13,3 +13,9 @@ watch( '.*_spec.rb' )  { |md|
   puts "Running #{md[0]}"
   system("rake spec SPEC=#{md[0]}")
 }
+
+watch( '.*.feature' )  { |md| 
+  puts '=' * 100
+  puts "Running #{md[0]}"
+  system("cucumber -r features #{md[0]}")
+}
