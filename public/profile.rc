@@ -47,17 +47,19 @@ alias ss='script/server $*'
 alias sc='script/console $*'
 alias apr='touch tmp/restart.txt; sudo apachectl restart'
 
-alias gst='git status'
+alias gs='git status'
 alias gl='git pull'
 alias gpr='git pull --rebase'
 alias gp='git push'
 alias gd='git diff'
 alias gba='git branch -a'
 alias gdc='git diff --cached'
-# make performance better by doing a 
-alias gr='git repack -a -d'
 alias gcm='git checkout master'
 alias gka='gitk --all'
+alias gcv='git cherry -v master'
+
+# make performance better by doing a 
+alias gr='git repack -a -d'
 alias glall='find . -depth 2 -name .git | sed -e"s/\.git//" | while read d; do pushd $d; gcm; gl; popd; done'
 
 # Declare as a function so it can be called in shell scripts
