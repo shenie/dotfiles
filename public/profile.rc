@@ -49,7 +49,6 @@ alias apr='touch tmp/restart.txt; sudo apachectl restart'
 
 alias gs='git status'
 alias gl='git pull'
-alias gpr='git pull --rebase'
 alias gp='git push'
 alias gd='git diff'
 alias gba='git branch -a'
