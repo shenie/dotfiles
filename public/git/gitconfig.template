@@ -1,7 +1,5 @@
 [color]
-	diff = auto
-	status = auto
-	branch = auto
+	ui = auto
 [user]
 	name = <%= SETTINGS['name'] %>
 	email = <%= SETTINGS['email'] %>
@@ -11,7 +9,11 @@
 	co = checkout
 	st = status
 	ci = commit
+  sb = show-branch
 [core]
 	excludesfile = <%= PUBLIC_DIR %>/git/gitignore
 [branch]
   autosetupmerge = true
+[showbranch]
+  default = --all
+
