@@ -59,6 +59,7 @@ alias gdc='git diff --cached'
 alias gcm='git checkout master'
 alias gka='gitk --all'
 alias gcv='git cherry -v master'
+alias gsb='git show-branch'
 
 # make performance better by doing a 
 alias gr='git repack -a -d'
