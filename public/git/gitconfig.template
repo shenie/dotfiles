@@ -1,17 +1,17 @@
 [color]
-	ui = auto
+  ui = auto
 [user]
-	name = <%= SETTINGS['name'] %>
-	email = <%= SETTINGS['email'] %>
+  name = <%= SETTINGS['name'] %>
+  email = <%= SETTINGS['email'] %>
 [apply]
-	whitespace = nowarn
+  whitespace = nowarn
 [alias]
-	co = checkout
-	st = status
-	ci = commit
+  co = checkout
+  st = status
+  ci = commit
   sb = show-branch
 [core]
-	excludesfile = <%= PUBLIC_DIR %>/git/gitignore
+  excludesfile = <%= PUBLIC_DIR %>/git/gitignore
 [branch]
   autosetupmerge = true
 [showbranch]
