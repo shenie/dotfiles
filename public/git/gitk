@@ -1,6 +1,6 @@
-set mainfont {Monaco 12}
-set textfont {Monaco 12}
-set uifont {"Monaco Bold" 12}
+set mainfont {Monaco 14}
+set textfont {Monaco 14}
+set uifont {Monaco 14}
 set tabstop 8
 set findmergefiles 0
 set maxgraphpct 50
@@ -16,13 +16,17 @@ set bgcolor white
 set fgcolor black
 set colors {green red blue magenta darkgrey brown orange}
 set diffcolors {red "#00a000" blue}
+set markbgcolor #e0e0ff
 set diffcontext 3
 set selectbgcolor gray85
-set geometry(main) 991x591+5+45
-set geometry(topwidth) 987
-set geometry(topheight) 150
-set geometry(pwsash0) "351 2"
-set geometry(pwsash1) "526 2"
-set geometry(botwidth) 439
-set geometry(botheight) 421
+set extdifftool opendiff
+set perfile_attrs 0
+set geometry(main) 1349x856+5+22
+set geometry(state) normal
+set geometry(topwidth) 1347
+set geometry(topheight) 368
+set geometry(pwsash0) "471 1"
+set geometry(pwsash1) "708 1"
+set geometry(botwidth) 588
+set geometry(botheight) 476
 set permviews {}
