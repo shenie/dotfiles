@@ -10,7 +10,7 @@ export GREP_COLOR='1;33'
 
 export SVN_EDITOR=vi
 
-PATH=/usr/local/bin:/usr/local/sbin:/usr/local/git/bin:.:${PATH}:${HOME}/bin:/usr/local/mysql/bin:/Library/PostgreSQL/8.3/bin
+PATH=/usr/local/bin:/usr/local/sbin:/usr/local/git/bin:.:${PATH}:${HOME}/bin:/usr/local/mysql/bin
 export MANPATH=/usr/local/git/man:$MANPATH
 
 # comment out less setting because it is screwing up git pager
