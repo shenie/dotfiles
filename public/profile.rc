@@ -28,22 +28,6 @@ alias doc='cd Documents'
 export JAVA_HOME=/Library/Java/Home
 export ANT_HOME=/usr/share/ant
 
-# alias mate=/Applications/TextMate.app/Contents/Resources/mate
-# alias _mm='mate app config db/migrate doc lib public test Rakefile spec'
-# 
-# mm() {
-#   if [ $# -eq 1 ] ; then
-#     pushd $1
-#     _mm
-#     popd
-#   else
-#     _mm
-#   fi
-# }
-
-#export GEM_HOME=/Library/Ruby/Gems/1.8
-#export GEM_PATH=/usr/lib/ruby/gems/1.8
-
 alias rake="rake --rakelibdir=$HOME/.rakelib/"
 
 alias ss='script/server $*'
