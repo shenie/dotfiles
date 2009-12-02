@@ -28,63 +28,7 @@ IRB.conf[:PROMPT].each do |prompt|
   IRB.conf[:PROMPT][prompt.first][:PROMPT_I] = "#{current_dir} #{prompt_i}"
 end
 
-def ri(*names) 
-  system(%{ri #{names.map {|name| name.to_s}.join(" ")}}) 
-end 
 
-class Object
-  # Clone fails on numbers, but they're immutable anyway
-  def megaClone
-    begin self.clone; rescue; self; end
-  end
-  def what?(*a)
-    MethodFinder.new(self, *a)
-  end
-end
-
-class MethodFinder
-   def initialize( obj, *args )
-     @obj = obj
-     @args = args
-   end
-   def ==( val )
-     MethodFinder.show( @obj, val, *@args )
-   end
-
-  # Find all methods on [anObject] which, when called with [args] return [expectedResult]
-  def self.find( anObject, expectedResult, *args )
-    anObject.methods.select { |name| anObject.method(name).arity == args.size }.
-                     select { |name| begin anObject.megaClone.method( name ).call(*args) == expectedResult; 
-                                     rescue; end }
-  end
-
-  # Pretty-prints the results of the previous method
-  def self.show( anObject, expectedResult, *args )
-    find( anObject, expectedResult, *args ).each { |name|
-      print "#{anObject.inspect}.#{name}" 
-      print "(" + args.map { |o| o.inspect }.join(", ") + ")" unless args.empty?
-      puts " == #{expectedResult.inspect}" 
-    }
-  end
-end
-
-def rails
-  require 'rubygems'
-  gem 'rails'
-  require 'active_record'
-  require 'action_controller'
-  require 'active_support'
-  require 'action_view'
-  require 'action_pack'
-  class << ActiveRecord::Base
-    alias_method :[], :find
-  end
-end
-
-script_console_running = ENV.include?('RAILS_ENV') && IRB.conf[:LOAD_MODULES] && IRB.conf[:LOAD_MODULES].include?('console_with_helpers')
-rails_running = ENV.include?('RAILS_ENV') && !(IRB.conf[:LOAD_MODULES] && IRB.conf[:LOAD_MODULES].include?('console_with_helpers'))
-
-if script_console_running
-  require 'logger'
-  Object.const_set(:RAILS_DEFAULT_LOGGER, Logger.new(STDOUT))
+if ENV['RAILS_ENV']
+  load File.dirname(__FILE__) + '/.railsrc'
 end
