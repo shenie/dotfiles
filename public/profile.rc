@@ -28,7 +28,7 @@ alias doc='cd Documents'
 export JAVA_HOME=/Library/Java/Home
 export ANT_HOME=/usr/share/ant
 
-alias rake="rake --rakelibdir=$HOME/.rakelib/"
+# alias rake="rake --rakelibdir=$HOME/.rakelib/"
 
 alias ss='script/server $*'
 alias sc='script/console $*'
