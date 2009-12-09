@@ -147,3 +147,7 @@ mcd() {
 alias cd='mcd'
 
 title
+
+# From http://blog.peepcode.com/tutorials/2009/shell-method-missing
+trap 'if ! type -t $BASH_COMMAND >/dev/null; then ~/bin/shell_method_missing.rb $BASH_COMMAND; fi' DEBUG
+
