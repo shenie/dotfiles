@@ -77,7 +77,7 @@ when /^[A-Za-z0-9_\-\/]+\.gem$/
   # @example
   #   haml.gem
   gem_to_install = command.first.gsub(/\.gem$/, '')
-  run "sudo", "gem", "install", gem_to_install
+  run "gem", "install", gem_to_install
   
 else
   abort "Error: No matching action defined in #{__FILE__.inspect}"
