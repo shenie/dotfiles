@@ -16,4 +16,6 @@
   autosetupmerge = true
 [showbranch]
   default = --all
+[github]
+	user = shenie
 
