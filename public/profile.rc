@@ -99,7 +99,8 @@ gitdir() {
 # alias svnopen='svn st | sed -e"s/\?//" | xargs open'
 
 pushdgem() {
-  pushd `gem which $1 | tail -1 | sed -e's/^\(.*\/\).*$/\1/'`
+  pushd `gem which $1 | tail -1 | xargs dirname`
+  cd ..
 }
 
 f_check_ahead() {
