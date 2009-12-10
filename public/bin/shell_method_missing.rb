@@ -33,51 +33,20 @@ def echo(message)
 end
 
 case command.join(' ')
-when /^git(@|:\/\/).*\.git$/
-  # Clone any full git repo URL.
-  # @example
-  #   git://github.com/crafterm/jd.git
-  #
-  # TODO: Doesn't work with zsh. It never gets called.
-  # TODO: Take a second argument for the destination name.
-  
-  run("git", "clone", command)
-  
-when /^(.*) (.*)\.git$/
-  # Clone a user and project from GitHub.
-  # Does the right thing when cloning your own projects.
-  #
-  # @example
-  #   bjeanes dot-files.git
-  git_project_user      = $1
-  git_project_name      = $2
-  destination_directory = ""
-  git_url               = ""
-  
-  if git_project_user == ENV['USER']
-    destination_directory = git_project_name
-    git_url = "git@github.com:#{git_project_user}/#{git_project_name}.git"
-  else
-    destination_directory = [git_project_user, git_project_name].join('-')
-    git_url = "git://github.com/#{git_project_user}/#{git_project_name}.git"
-  end
-  # TODO: Would be nice to cd to the project directory afterwards
-  run "git", "clone", git_url, destination_directory
-  echo "Cloned as \'#{destination_directory}\'"
-  
-when /^(?:ftp|https?):\/\/.+\.t(?:ar\.)?gz$/
-  # Download and unzip a URL
-  run "curl #{command} | tar xzv"
-  
-when /^[a-z0-9_\-\/]+\.feature$/
-  run "cucumber", command
-  
+
 when /^[A-Za-z0-9_\-\/]+\.gem$/
   # Install a gem
   # @example
   #   haml.gem
   gem_to_install = command.first.gsub(/\.gem$/, '')
   run "gem", "install", gem_to_install
+  
+when /^[A-Za-z0-9_\-\/]+\.mate$/
+  # Open the gem in textmate
+  # @example
+  #   haml.mate
+  gem_to_open = command.first.gsub(/\.mate$/, '')
+  run "gem which #{gem_to_open} | tail -1 | xargs dirname | sed -e's/$/\\/../' | xargs mate"
   
 else
   abort "Error: No matching action defined in #{__FILE__.inspect}"
