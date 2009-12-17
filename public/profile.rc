@@ -44,33 +44,12 @@ alias gdc='git diff --cached'
 alias gcm='git checkout master'
 alias gka='gitk --all'
 alias gcv='git cherry -v master'
+alias gnp='git cherry -v'
 alias gsb='git show-branch'
 
 # make performance better by doing a 
 # alias gr='git repack -a -d'
 alias glall='find . -depth 2 -name .git | sed -e"s/\.git//" | while read d; do pushd $d; gcm; gl; popd; done'
-
-# Declare as a function so it can be called in shell scripts
-gnp() {
-  branch=`git branch | grep "^*" | cut -d' ' -f2`
-  if [ "${branch}" == "" ] ; then
-    echo "ERROR: Not a branch"
-    return 1
-  fi
-  remote=`git config --get branch.${branch}.remote`
-  if [ "$remote" == "" ] ; then
-    echo "ERROR: ${branch} is not tracking remote"
-    return 1
-  fi
-  
-  merge=`git config --get branch.${branch}.merge | cut -d / -f 3`
-  if [ "$merge" == "" ] ; then
-    echo "ERROR: ${branch} is not auto merging"
-    return 1
-  fi
-  
-  git cherry -v ${remote}/${merge}
-}
 
 # Find directories that are under the control of git or svn
 vcsdir() { 
