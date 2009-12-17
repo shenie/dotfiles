@@ -47,7 +47,7 @@ alias gcv='git cherry -v master'
 alias gsb='git show-branch'
 
 # make performance better by doing a 
-alias gr='git repack -a -d'
+# alias gr='git repack -a -d'
 alias glall='find . -depth 2 -name .git | sed -e"s/\.git//" | while read d; do pushd $d; gcm; gl; popd; done'
 
 # Declare as a function so it can be called in shell scripts
