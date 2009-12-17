@@ -4,3 +4,4 @@ CVS
 .svn
 *.class
 *.iws
+.rake_tasks~
