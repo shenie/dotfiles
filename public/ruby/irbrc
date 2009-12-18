@@ -32,3 +32,8 @@ end
 if ENV['RAILS_ENV']
   load File.dirname(__FILE__) + '/.railsrc'
 end
+
+# Print the last n lines in history
+def h(n=10)
+  puts  Readline::HISTORY.entries[n*-1..-1].join("\n")
+end
