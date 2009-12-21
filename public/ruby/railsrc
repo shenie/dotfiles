@@ -8,3 +8,7 @@ end
 def arm
   ActiveRecord::Migration
 end
+
+def conn
+  ActiveRecord::Base.connection
+end
