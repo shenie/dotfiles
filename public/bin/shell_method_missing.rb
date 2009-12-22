@@ -47,9 +47,16 @@ when /^[A-Za-z0-9_\-\/]+\.mate$/
   #   haml.mate
   gem_to_open = command.first.gsub(/\.mate$/, '')
   run "gem which #{gem_to_open} | tail -1 | xargs dirname | sed -e's/$/\\/../' | xargs mate"
+
+when /^[A-Za-z0-9_\-\/]+\.cukes$/
+  # Run cucumber with tag
+  # @example
+  #   wip.cukes
+  tag = command.first.gsub(/\.cukes$/, '')
+  run "cucumber -r features/ -t @#{tag} features/"
   
 else
-  abort "Error: No matching action defined in #{__FILE__.inspect}"
+  abort "Error: No matching action (#{command.join(' ')}) defined in #{__FILE__.inspect}"
 end
 
 # Other Ideas:
