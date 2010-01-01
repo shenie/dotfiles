@@ -14,6 +14,8 @@ export SVN_EDITOR=vi
 PATH=/usr/local/bin:/usr/local/sbin:/usr/local/git/bin:.:${PATH}:${HOME}/bin:/usr/local/mysql/bin
 export MANPATH=/usr/local/git/man:$MANPATH
 
+export HISTIGNORE="ls:h:[bf]g:exit:g[lspd]:gka:apr:sc:ss:nas:gcv:gnp"
+
 # comment out less setting because it is screwing up git pager
 # export LESS=-i
 
