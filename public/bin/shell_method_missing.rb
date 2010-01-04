@@ -55,6 +55,18 @@ when /^[A-Za-z0-9_\-\/]+\.cukes$/
   tag = command.first.gsub(/\.cukes$/, '')
   run "cucumber -r features/ -t @#{tag} features/"
   
+when /^mate\.[A-Za-z0-9_\-\/]+$/
+  # Open project with textmate
+  # @example
+  #   mate.tbb
+  project = command.first.gsub(/^mate\./, '')
+  tmproj = `find ~/dev -name #{project}.tmproj -maxdepth 3`
+  if tmproj.strip.length != 0
+    run "open #{tmproj}"
+  else
+    run "find ~/dev -name #{project} -type d -maxdepth 3 | xargs mate"
+  end
+  
 else
   abort "Error: No matching action (#{command.join(' ')}) defined in #{__FILE__.inspect}"
 end
