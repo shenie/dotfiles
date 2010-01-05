@@ -1,0 +1,46 @@
+#!/usr/bin/env ruby
+
+class GrailsCompletion
+  CACHE_FILE_NAME = '.grails_targets~'
+  
+  def initialize(command)
+    @command = command
+  end
+  
+  def matches
+    all_targets.select do |target|
+      target[0, typed.length] == typed
+    end
+  end
+  
+  private
+  
+  def typed
+    @command[/\s(.+?)$/, 1] || ''
+  end
+
+  def all_targets
+    cache_current? ? targets_from_cache : generate_targets
+  end
+  
+  def cache_current?
+    File.exist?(cache_file)
+  end
+  
+  def cache_file
+    File.join(Dir.pwd, CACHE_FILE_NAME)
+  end
+  
+  def targets_from_cache
+    IO.read(cache_file).split
+  end
+  
+  def generate_targets
+    targets = `grails help`.split("\n")[20..-1].collect {|line| line.split[1]}
+    File.open(cache_file, 'w') { |f| f.write targets.join("\n") }
+    targets
+  end
+end
+
+puts GrailsCompletion.new(ENV["COMP_LINE"]).matches
+exit 0
