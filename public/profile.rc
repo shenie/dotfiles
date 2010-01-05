@@ -92,7 +92,7 @@ f_check_ahead() {
     
     has_origin=`git branch -a | grep -c origin`
     if [ $has_origin -ne 0 ] ; then
-      diff=`gnp | wc -l`
+      diff=`git cherry -v | wc -l`
       if [ $diff -ne 0 ] ; then
         echo $repos
       fi
