@@ -5,4 +5,3 @@ CVS
 *.class
 *.iws
 .rake_tasks~
-.grails_targets~
