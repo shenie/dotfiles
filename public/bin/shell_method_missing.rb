@@ -66,9 +66,11 @@ when /^mate\.[A-Za-z0-9_\-\/]+$/
   else
     run "find ~/dev -name #{project} -type d -maxdepth 3 | xargs mate"
   end
-  
+
+when /=/
+  # skip things such as 'PATH=$PATH:~/bin' etc
 else
-  abort "Error: No matching action (#{command.join(' ')}) defined in #{__FILE__.inspect}"
+  abort "Error: No matching action (#{command.join(' ')}) defined in #{__FILE__.inspect}" 
 end
 
 # Other Ideas:
