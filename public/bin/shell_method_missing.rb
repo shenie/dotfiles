@@ -69,6 +69,8 @@ when /^mate\.[A-Za-z0-9_\-\/]+$/
 
 when /=/
   # skip things such as 'PATH=$PATH:~/bin' etc
+when /^~/
+  # skip things such as '~/bin/tpg.rb' etc
 else
   abort "Error: No matching action (#{command.join(' ')}) defined in #{__FILE__.inspect}" 
 end
