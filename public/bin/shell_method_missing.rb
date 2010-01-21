@@ -54,15 +54,15 @@ when /^[A-Za-z0-9_\-\/]+\.cukes$/
   #   wip.cukes
   tag = command.first.gsub(/\.cukes$/, '')
   run "cucumber -r features/ -t @#{tag} features/"
-  
-when /^mate\.[A-Za-z0-9_\-\/]+$/
+
+when /^[A-Za-z0-9_\-\/]+\.tmproj$/
   # Open project with textmate
   # @example
-  #   mate.tbb
-  project = command.first.gsub(/^mate\./, '')
+  #   tbb.tmproj
+  project = command.first.gsub(/\.tmproj/, '')
   tmproj = `find ~/dev -name #{project}.tmproj -maxdepth 3`
   if tmproj.strip.length != 0
-    run "open #{tmproj}"
+    run "open #{tmproj}".strip
   else
     run "find ~/dev -name #{project} -type d -maxdepth 3 | xargs mate"
   end
