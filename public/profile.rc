@@ -137,3 +137,24 @@ complete -C $HOME/.completion_scripts/grails_completion -o default grails
 
 # From http://blog.peepcode.com/tutorials/2009/shell-method-missing
 trap 'if ! type -t $BASH_COMMAND >/dev/null; then ~/bin/shell_method_missing.rb $BASH_COMMAND; fi' DEBUG
+
+
+# Slightly modified from http://gist.github.com/280202
+_growl_prompt_command() {
+  local laststatus=$?
+  eval $PREV_PROMPT_COMMAND
+  growl -H localhost -n Shell -m "$PROMPT_MEMO exited with $laststatus" Shell
+  PROMPT_COMMAND=$PREV_PROMPT_COMMAND
+  PREV_PROMPT_COMMAND=
+  PROMPT_MEMO=
+}
+ 
+growldone() {
+  PREV_PROMPT_COMMAND=$PROMPT_COMMAND
+  PROMPT_COMMAND=_growl_prompt_command
+  if [ $# -gt 0 ]; then
+    PROMPT_MEMO=$@
+  else
+    PROMPT_MEMO=Command
+  fi
+}
