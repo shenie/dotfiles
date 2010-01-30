@@ -69,6 +69,8 @@ when /^[A-Za-z0-9_\-\/]+\.tmproj$/
 
 when /=/
   # skip things such as 'PATH=$PATH:~/bin' etc
+when /\$\{TM/
+  # skip TextMate Markdown preview command
 when /^~/
   # skip things such as '~/bin/tpg.rb' etc
 else
