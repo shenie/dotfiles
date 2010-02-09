@@ -72,6 +72,10 @@ mcd() {
   title
 }
 
+tf() {
+  echo -n -e "\033]0;${1}\007"; tail -f $1
+}
+
 # This alias seems to resolve the infinite loop problem described in mcd
 alias cd='mcd'
 
