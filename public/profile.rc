@@ -31,8 +31,6 @@ alias doc='cd Documents'
 export JAVA_HOME=/Library/Java/Home
 export ANT_HOME=/usr/share/ant
 
-# alias rake="rake --rakelibdir=$HOME/.rakelib/"
-
 alias ss='script/server $*'
 alias sc='script/console $*'
 alias apr='touch tmp/restart.txt; sudo apachectl restart'
@@ -51,29 +49,6 @@ alias gsb='git show-branch'
 
 # make performance better by doing a 
 # alias gr='git repack -a -d'
-alias glall='find . -depth 2 -name .git | sed -e"s/\.git//" | while read d; do pushd $d; gcm; gl; popd; done'
-
-# Find directories that are under the control of git or svn
-vcsdir() { 
-  arg=`echo $1 | sed -e's/\/$//'`
-  if [ $# -ne 1 ] ; then
-    arg="."
-  fi
-  
-  find "$arg" -mindepth 2 -maxdepth 2 -name .svn -or -name .git -type d | sed -e's/\.svn//' -e's/\.git//'
-}
-
-gitdir() {
-  arg=`echo $1 | sed -e's/\/$//'`
-  if [ $# -ne 1 ] ; then
-    arg="."
-  fi
-
-  find "$arg" -mindepth 2 -maxdepth 2 -name .git -type d 2>/dev/null | sed -e's/\.git$//' 
-}
-
-# alias cprp='cpr | grep "/" | while read dir; do pushd $dir; git push; popd; done'
-# alias ggl='gitdir | while read dir; do pushd $dir >/dev/null; git pull; popd >/dev/null; done'
 
 # alias svnadd='svn st | egrep "^\?" | while read st file; do svn add "$file"; done;'
 # alias svnrm='svn st | egrep "^!" | while read st file; do svn rm "$file"; done;'
@@ -83,35 +58,6 @@ gitdir() {
 pushdgem() {
   pushd `gem which $1 | tail -1 | xargs dirname`
   cd ..
-}
-
-f_check_ahead() {
-  gitdir $1 | while read repos
-  do
-    pushd $repos >/dev/null
-    
-    has_origin=`git branch -a | grep -c origin`
-    if [ $has_origin -ne 0 ] ; then
-      diff=`git cherry -v | wc -l`
-      if [ $diff -ne 0 ] ; then
-        echo $repos
-      fi
-    fi
-    popd >/dev/null
-  done
-}
-
-f_check_dirty() {
-  gitdir $1 | while read repos
-  do
-    pushd $repos >/dev/null
-    
-    status_count=`git status | grep 'nothing to commit' | wc -l`
-    if [ $status_count -ne 1 ] ; then
-      echo $repos
-    fi
-    popd >/dev/null
-  done
 }
 
 # The mcd function will change directory and set terminal title to match current path
