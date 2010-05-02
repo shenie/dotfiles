@@ -10,6 +10,7 @@
   st = status
   ci = commit
   sb = show-branch
+  up = !git fetch origin && git rebase origin/master
 [core]
   excludesfile = <%= PUBLIC_DIR %>/git/gitignore
 [branch]
@@ -17,5 +18,5 @@
 [showbranch]
   default = --all
 [github]
-	user = shenie
+  user = shenie
 
