@@ -46,7 +46,6 @@ alias gka='gitk --all'
 alias gcv='git cherry -v master'
 alias gnp='git cherry -v'
 alias gsb='git show-branch'
-alias og='open "http://github.com/$(git remote -v | head -1 | cut -d: -f2 | cut -d. -f1)"'
 
 # make performance better by doing a 
 # alias gr='git repack -a -d'
