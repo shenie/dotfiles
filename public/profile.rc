@@ -15,6 +15,8 @@ PATH=/usr/local/bin:/usr/local/sbin:/usr/local/git/bin:.:${PATH}:${HOME}/bin:/us
 export MANPATH=/usr/local/git/man:$MANPATH
 
 export HISTIGNORE="ls:h:[bf]g:exit:g[lspd]:gka:apr:sc:ss:nas:gcv:gnp:cd:pwd:gcm"
+export HISTSIZE=5000
+export HISTFILESIZE=5000
 
 # comment out less setting because it is screwing up git pager
 # export LESS=-i
