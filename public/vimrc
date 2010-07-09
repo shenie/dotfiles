@@ -12,3 +12,4 @@ set smartcase
 set hlsearch
 set background=dark
 set nobackup
+set laststatus=2
