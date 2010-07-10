@@ -4,6 +4,7 @@ silent! call pathogen#runtime_append_all_bundles()
 
 syntax on
 set noautoindent
+set notitle                       " Turning off message Thanks for flying vim
 
 set showcmd                       " Display incomplete commands.
 set showmode                      " Display the mode you're in.
