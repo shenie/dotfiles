@@ -34,13 +34,9 @@ set nobackup                      " Don't make a backup before overwriting a fil
 set nowritebackup                 " And again.
 set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
 
-
 set laststatus=2                  " Show the status line all the time
-
-set title                         " Set the terminal's title
 
 set foldcolumn=2
 "autocmd FileType ruby setlocal foldmethod=syntax
 autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
 
-set notitle                       " Turning off message Thanks for flying vim
