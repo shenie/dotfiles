@@ -1,5 +1,7 @@
 set nocompatible                  " Must come first because it changes other options.
 
+silent! call pathogen#runtime_append_all_bundles()
+
 syntax on
 set noautoindent
 
@@ -37,3 +39,4 @@ set title                         " Set the terminal's title
 
 set foldcolumn=2
 "autocmd FileType ruby setlocal foldmethod=syntax
+autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
