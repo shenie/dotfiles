@@ -5,6 +5,8 @@ silent! call pathogen#runtime_append_all_bundles()
 syntax on
 set noautoindent
 
+set title                         " Show file name and file path in terminal title
+
 set showcmd                       " Display incomplete commands.
 set showmode                      " Display the mode you're in.
 
