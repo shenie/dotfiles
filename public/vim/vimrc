@@ -3,6 +3,7 @@ set nocompatible                  " Must come first because it changes other opt
 if has("gui_macvim")
   set lines=60
   set columns=140
+  set guifont=Menlo_Regular:h13
 endif
 
 silent! call pathogen#runtime_append_all_bundles()
