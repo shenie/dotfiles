@@ -5,7 +5,6 @@ if has("gui_macvim")
   set columns=140
 endif
 
-endif
 silent! call pathogen#runtime_append_all_bundles()
 
 syntax on
