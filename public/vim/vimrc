@@ -1,6 +1,7 @@
 set nocompatible                  " Must come first because it changes other options.
 
 if has("gui_macvim")
+  colorscheme ir_black
   set lines=60
   set columns=140
   set guifont=Menlo_Regular:h13
