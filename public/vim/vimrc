@@ -23,7 +23,7 @@ set backspace=indent,eol,start    " Intuitive backspacing.
 
 set history=1000
 
-set nowrap                        "dont wrap lines
+set wrap                          "wrap lines
 set linebreak                     "wrap lines at convenient points
 
 set hidden                        " Handle multiple buffers better.
