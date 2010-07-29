@@ -57,5 +57,6 @@ set laststatus=2                  " Show the status line all the time
 
 set foldcolumn=2
 "autocmd FileType ruby setlocal foldmethod=syntax
-autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
+"This changes directory but it is like autochdir
+"autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
 
