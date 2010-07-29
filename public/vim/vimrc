@@ -9,6 +9,8 @@ if has("gui_macvim")
     let s:path = system("echo echo VIMPATH'${PATH}' | $SHELL -l")
     let $PATH = matchstr(s:path, 'VIMPATH\zs.\{-}\ze\n')
   endif
+  macmenu &File.New\ Tab key=<nop>
+  map <D-t> <Plug>PeepOpen
 endif
 
 silent! call pathogen#runtime_append_all_bundles()
