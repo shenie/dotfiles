@@ -60,3 +60,5 @@ set foldcolumn=2
 "This changes directory but it is like autochdir
 "autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
 
+set autowriteall
+
