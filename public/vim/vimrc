@@ -5,6 +5,7 @@ if has("gui_macvim")
   set lines=60
   set columns=140
   set guifont=Menlo_Regular:h13
+  set guicursor=n:blinkon0
   if $SHELL =~ '/\(sh\|csh\|bash\|tcsh\|zsh\)$'
     let s:path = system("echo echo VIMPATH'${PATH}' | $SHELL -l")
     let $PATH = matchstr(s:path, 'VIMPATH\zs.\{-}\ze\n')
