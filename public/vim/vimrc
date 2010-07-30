@@ -18,6 +18,11 @@ silent! call pathogen#runtime_append_all_bundles()
 
 syntax on
 set noautoindent
+set autowriteall
+
+set tabstop=2                     " Global tab width.
+set shiftwidth=2                  " And again, related.
+set expandtab                     " Use spaces instead of tabs
 
 set showcmd                       " Display incomplete commands.
 set showmode                      " Display the mode you're in.
@@ -43,10 +48,6 @@ set ruler                         " Show cursor position.
 set incsearch                     " Highlight matches as you type.
 set hlsearch                      " Highlight matches.
 
-set tabstop=2                     " Global tab width.
-set shiftwidth=2                  " And again, related.
-set expandtab                     " Use spaces instead of tabs
-
 set background=dark
 
 set nobackup                      " Don't make a backup before overwriting a file.
@@ -61,5 +62,4 @@ set foldcolumn=2
 "This changes directory but it is like autochdir
 "autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
 
-set autowriteall
 
