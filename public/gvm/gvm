@@ -1,0 +1,13 @@
+#!/bin/bash
+
+source ~/.grails-$1
+
+echo "=========================================="
+echo ""
+groovy -version
+echo ""
+
+echo "=========================================="
+echo ""
+grails
+echo ""
