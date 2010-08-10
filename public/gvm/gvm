@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ~/.grails-$1
+source ~/.gvm/grails-$1
 
 echo "=========================================="
 echo ""
