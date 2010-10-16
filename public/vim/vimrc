@@ -4,14 +4,14 @@ if has("gui_macvim")
   colorscheme ir_black
   set lines=60
   set columns=140
-  set guifont=Menlo_Regular:h13
+  set guifont=Menlo_Regular:h16
   set guicursor=n:blinkon0
   if $SHELL =~ '/\(sh\|csh\|bash\|tcsh\|zsh\)$'
     let s:path = system("echo echo VIMPATH'${PATH}' | $SHELL -l")
     let $PATH = matchstr(s:path, 'VIMPATH\zs.\{-}\ze\n')
   endif
-  macmenu &File.New\ Tab key=<nop>
-  map <D-t> <Plug>PeepOpen
+"  macmenu &File.New\ Tab key=<nop>
+  map <D-r> <Plug>PeepOpen
 endif
 
 silent! call pathogen#runtime_append_all_bundles()
@@ -53,7 +53,7 @@ set background=dark
 
 set nobackup                      " Don't make a backup before overwriting a file.
 set nowritebackup                 " And again.
-set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
+set directory=/tmp//,.            " Keep swap files in one location
 
 set statusline=%<[%n]\ %F\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 set laststatus=2                  " Show the status line all the time
