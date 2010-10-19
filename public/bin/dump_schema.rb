@@ -8,7 +8,8 @@ ActiveRecord::Base.establish_connection(
   :host     => "localhost",
   :username => ARGV[1],
   :password => ARGV[2] || "",
-  :database => ARGV[0]
+  :database => ARGV[0],
+  :encoding => 'utf8'
 )
 
 ActiveRecord::SchemaDumper.dump

@@ -8,7 +8,8 @@ ActiveRecord::Base.establish_connection(
   :host     => "localhost",
   :username => ARGV[2],
   :password => ARGV[3] || "",
-  :database => ARGV[1]
+  :database => ARGV[1],
+  :encoding => 'utf8'
 )
 
 load(ARGV[0])
