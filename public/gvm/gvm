@@ -1,15 +1,27 @@
-#!/bin/bash
 
-source ~/.gvm/grails-$1
+version=${1:-1.3.2}
 
-echo "=========================================="
-echo ""
-groovy -version
-echo ""
+if [ -e ~/.gvm/grails-$version ] ; then
+  source ~/.gvm/grails-$version
+else
+  rm ~/bin/siteminder/grails >/dev/null 2>&1
+  ln -s /usr/local/grails-$version ~/bin/siteminder/grails
+fi
 
-echo "=========================================="
+which groovy >/dev/null
+
+if [ $? -ne 1 ] ; then
+  echo "============================================="
+  echo ""
+  groovy -version
+  echo ""
+fi
+
+echo "============================================="
 echo ""
 grails | head -1
 echo ""
-echo "=========================================="
+echo "============================================="
 echo ""
+
+
