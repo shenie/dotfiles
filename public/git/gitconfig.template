@@ -11,6 +11,7 @@
   ci = commit
   sb = show-branch
   up = !git fetch origin && git rebase origin/master
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %f %Cgreen(%cr)%Creset'
   who = log --format="'%ai %h %aN %s'"
 [core]
   excludesfile = <%= PUBLIC_DIR %>/git/gitignore
