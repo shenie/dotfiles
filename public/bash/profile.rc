@@ -32,6 +32,9 @@ alias dir='ls -l'
 alias ls='ls -aF'
 alias doc='cd Documents'
 
+# This can be used to automatically fix the terminal title after ssh to a remote box that changed it
+# export PROMPT_COMMAND='title'
+
 export JAVA_HOME=/Library/Java/Home
 export ANT_HOME=/usr/share/ant
 
