@@ -35,6 +35,11 @@ alias doc='cd Documents'
 # This can be used to automatically fix the terminal title after ssh to a remote box that changed it
 # export PROMPT_COMMAND='title'
 
+# Another way to fix the title
+ssh() {
+  /usr/bin/ssh $@ && title
+}
+
 export JAVA_HOME=/Library/Java/Home
 export ANT_HOME=/usr/share/ant
 
@@ -120,4 +125,5 @@ growldone() {
 }
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
 
