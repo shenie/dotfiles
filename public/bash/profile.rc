@@ -8,7 +8,7 @@ export GIT_PS1_SHOWUNTRACKEDFILES=y
 export PS1='\[\e[32;40m\]\! [$(date "+%H:%M")] \u@\h:\[\e[33;40m\]\w \[\e[34;1m\]$(__git_ps1 "(%s) ")\[\e[33;1m\]\$ \[\e[0m\]'
 
 # This can be used to automatically fix the terminal title after ssh to a remote box that changed it
-export PROMPT_COMMAND='echo -n -e "\033]0;`hostname -s`:`pwd`\007"'
+export PROMPT_COMMAND='echo -n -e "\033]0;`hostname -s`:`pwd | sed -e's/.*andy/~/'`\007"'
 
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;33'
