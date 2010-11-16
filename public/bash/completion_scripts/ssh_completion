@@ -1,0 +1,31 @@
+#!/usr/bin/env ruby
+
+class SshCompletion
+  
+  def initialize(command)
+    @command = command
+  end
+  
+  def matches
+    all_targets.select do |target|
+      target[0, typed.length] == typed
+    end
+  end
+  
+  private
+  
+  def typed
+    @command[/\s(.+?)$/, 1] || ''
+  end
+
+  def all_targets
+    `cat ~/.ssh/config | grep "^Host"`.inject([]) do |hosts, line|
+      hosts << line[5..-1].split
+    end.flatten.sort.uniq
+  end
+ 
+end
+
+puts SshCompletion.new(ENV["COMP_LINE"]).matches
+
+exit 0

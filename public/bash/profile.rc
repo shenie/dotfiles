@@ -99,6 +99,7 @@ title
 # Completions
 complete -C $HOME/.completion_scripts/rake_completion -o default rake
 complete -C $HOME/.completion_scripts/grails_completion -o default grails
+complete -C $HOME/.completion_scripts/ssh_completion -o default ssh
 
 # From http://blog.peepcode.com/tutorials/2009/shell-method-missing
 trap 'if ! type -t $BASH_COMMAND >/dev/null; then ~/bin/shell_method_missing.rb $BASH_COMMAND; fi' DEBUG
