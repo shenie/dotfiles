@@ -1,5 +1,9 @@
 require 'logger'
-Object.const_set(:RAILS_DEFAULT_LOGGER, Logger.new(STDOUT))
+
+logger = Logger.new(STDOUT)
+
+Object.const_set(:RAILS_DEFAULT_LOGGER, logger)
+ActiveRecord::Base.logger = logger
 
 def sql(query)
   ActiveRecord::Base.connection.select_all(query)

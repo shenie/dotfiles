@@ -28,12 +28,13 @@ IRB.conf[:PROMPT].each do |prompt|
   IRB.conf[:PROMPT][prompt.first][:PROMPT_I] = "#{current_dir} #{prompt_i}"
 end
 
-
-if ENV['RAILS_ENV']
+begin
   load File.dirname(__FILE__) + '/.railsrc'
+rescue
 end
 
 # Print the last n lines in history
 def h(n=10)
   puts  Readline::HISTORY.entries[n*-1..-1].join("\n")
 end
+
