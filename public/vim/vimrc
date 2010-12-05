@@ -1,5 +1,7 @@
 set nocompatible                  " Must come first because it changes other options.
 
+let mapleader = ","
+
 if has("gui_macvim")
   colorscheme ir_black
   set lines=60
@@ -63,4 +65,8 @@ set foldcolumn=2
 "This changes directory but it is like autochdir
 "autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
 
+map <Leader>n :NERDTreeToggle<CR>
+map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
+cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
