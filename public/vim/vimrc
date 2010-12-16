@@ -68,5 +68,6 @@ set foldcolumn=2
 map <Leader>n :NERDTreeToggle<CR>
 map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
+map <Leader>tn :tabnew <C-R>=expand("%:p:h") . "/" <CR>
 
 cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
