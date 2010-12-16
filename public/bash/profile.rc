@@ -19,7 +19,7 @@ export SVN_EDITOR=vi
 PATH=/usr/local/bin:/usr/local/sbin:/usr/local/git/bin:.:${PATH}:${HOME}/bin:/usr/local/mysql/bin
 export MANPATH=/usr/local/git/man:$MANPATH
 
-export HISTCONTROL='ignoreboth'
+export HISTCONTROL="ignoreboth"
 export HISTIGNORE="ls:h:[bf]g:exit:g[lspd]:gka:apr:sc:ss:nas:gcv:gnp:cd:pwd:gcm"
 export HISTSIZE=5000
 export HISTFILESIZE=5000
