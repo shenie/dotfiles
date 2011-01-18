@@ -37,7 +37,7 @@ class ThorCompletion
   end
   
   def cache_file
-    "#{ENV['HOME']}/.thor/thor_targets~"
+    "#{ENV['HOME']}/.thor_tasks~"
   end
   
   def targets_from_cache
