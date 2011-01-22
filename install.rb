@@ -46,7 +46,7 @@ end
 
 # Install copied files
 mkdir BIN_DIR unless File.exist? BIN_DIR
-cp_r(Dir["#{PUBLIC_DIR}/bin/*"], BIN_DIR, :verbose => true)
+cp_r(Dir["#{PUBLIC_DIR}/bin/*"], BIN_DIR)
 
 # Install symlinked files
 [SETTINGS, CONFIG].collect {|h| h['mappings'] }.inject({}) { |r, h| r.merge!(h) if h; r }.each do |file, src| 
