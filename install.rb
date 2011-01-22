@@ -19,7 +19,7 @@ HOST = `hostname`.split('.').first.strip
 
 raise "#{PUBLIC_DIR} does not exists" unless File.exist? PUBLIC_DIR
 
-CONFIG = YAML::load(ERB.new(File.readlines('config.yml').join).result)
+CONFIG = YAML::load(ERB.new(File.readlines("#{PRIVATE_DIR}/config.yml").join).result)
 SETTINGS = CONFIG[HOST]
 
 
@@ -46,7 +46,7 @@ end
 
 # Install copied files
 mkdir BIN_DIR unless File.exist? BIN_DIR
-[PRIVATE_DIR, PUBLIC_DIR].each { |d| cp_r(Dir.glob("#{d}/bin/*"), BIN_DIR) }
+cp_r(Dir["#{PUBLIC_DIR}/bin/*"], BIN_DIR, :verbose => true)
 
 # Install symlinked files
 [SETTINGS, CONFIG].collect {|h| h['mappings'] }.inject({}) { |r, h| r.merge!(h) if h; r }.each do |file, src| 
