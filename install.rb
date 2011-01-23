@@ -17,7 +17,7 @@ GENERATED_DIR = "#{INSTALL_DIR}/generated"
 BIN_DIR = "#{HOME}/bin"
 HOST = `hostname`.split('.').first.strip
 
-raise "#{PUBLIC_DIR} does not exists" unless File.exist? PUBLIC_DIR
+raise "#{PRIVATE_DIR} does not exists" unless File.exist? PRIVATE_DIR
 
 CONFIG = YAML::load(ERB.new(File.readlines("#{PRIVATE_DIR}/config.yml").join).result)
 SETTINGS = CONFIG[HOST]
