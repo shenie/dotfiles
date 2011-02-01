@@ -67,6 +67,7 @@ set foldcolumn=2
 "autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
 
 map <Leader>n :NERDTreeToggle<CR>
+map <Leader>b :NERDTreeFind<CR>
 map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 map <Leader>tn :tabnew <C-R>=expand("%:p:h") . "/" <CR>
