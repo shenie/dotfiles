@@ -1,14 +1,18 @@
 set nocompatible                  " Must come first because it changes other options.
 
+silent! call pathogen#runtime_append_all_bundles()
+
 let mapleader = ","
 
 syntax on
 
+colorscheme solarized
+
 if has("gui_macvim")
-  colorscheme vwilight
+  set background=light
   set lines=60
   set columns=80
-  set guifont=Menlo_Regular:h16
+  set guifont=Menlo_Regular:h14
   set guicursor=n:blinkon0
   if $SHELL =~ '/\(sh\|csh\|bash\|tcsh\|zsh\)$'
     let s:path = system("echo echo VIMPATH'${PATH}' | $SHELL -l")
@@ -16,9 +20,10 @@ if has("gui_macvim")
   endif
 "  macmenu &File.New\ Tab key=<nop>
   map <D-r> <Plug>PeepOpen
+else
+  set background=dark
 endif
 
-silent! call pathogen#runtime_append_all_bundles()
 
 set noautoindent
 set autowriteall
@@ -51,8 +56,6 @@ set ruler                         " Show cursor position.
 
 set incsearch                     " Highlight matches as you type.
 set hlsearch                      " Highlight matches.
-
-set background=dark
 
 set nobackup                      " Don't make a backup before overwriting a file.
 set nowritebackup                 " And again.
