@@ -73,6 +73,8 @@ when /\$\{TM/
   # skip TextMate Markdown preview command
 when /^~/
   # skip things such as '~/bin/tpg.rb' etc
+when /^\\/
+  # skip things such as '~/bin/tpg.rb' etc
 else
   abort "Error: No matching action (#{command.join(' ')}) defined in #{__FILE__.inspect}" 
 end
