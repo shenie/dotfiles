@@ -6,9 +6,8 @@ let mapleader = ","
 
 syntax on
 
-colorscheme solarized
-
 if has("gui_macvim")
+  colorscheme solarized
   set background=light
   set lines=60
   set columns=80
@@ -21,7 +20,7 @@ if has("gui_macvim")
 "  macmenu &File.New\ Tab key=<nop>
   map <D-r> <Plug>PeepOpen
 else
-  set background=dark
+  colorscheme midnight
 endif
 
 
