@@ -7,21 +7,24 @@ class SshCompletion
   end
   
   def matches
-    all_targets.select do |target|
+    tmp_list = all_targets.select do |target|
       target[0, typed.length] == typed
+    end
+    if @command =~ /@/
+      tmp_list.collect { |c| "@#{c}" }
+    else
+      tmp_list
     end
   end
   
   private
   
   def typed
-    @command[/\s(.+?)$/, 1] || ''
+    (@command[/\s(.+?)$/, 1] || '').split('@').last
   end
 
   def all_targets
-    `cat ~/.ssh/config | grep "^Host"`.inject([]) do |hosts, line|
-      hosts << line[5..-1].split
-    end.flatten.sort.uniq
+    File.open("#{ENV['HOME']}/.ssh/known_hosts").readlines.collect { |l| l.split(/[ ,\]]/).first.gsub('[', '') }.sort.uniq
   end
  
 end
