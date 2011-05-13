@@ -1,3 +1,5 @@
+stty -ixon
+
 CDPATH=".:~:~/dev"
 
 . ~/.git-completion.bash
@@ -106,5 +108,4 @@ growldone() {
 }
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
 
