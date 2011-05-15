@@ -23,7 +23,6 @@ else
   colorscheme midnight
 endif
 
-
 set noautoindent
 set autowriteall
 set autoread
@@ -50,12 +49,14 @@ set wildmode=list:longest         " Complete files like a shell.
 set ignorecase                    " Case-insensitive searching.
 set smartcase                     " But case-sensitive if expression contains a capital letter.
 
+set title
 set number                        " Show line numbers.
 set ruler                         " Show cursor position.
 
 set incsearch                     " Highlight matches as you type.
-set hlsearch                      " Highlight matches.
+""set hlsearch                      " Highlight matches.
 
+set noswapfile                    " Swap files are annoying"
 set nobackup                      " Don't make a backup before overwriting a file.
 set nowritebackup                 " And again.
 set directory=/tmp//,.            " Keep swap files in one location
