@@ -77,3 +77,6 @@ map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 map <Leader>tn :tabnew <C-R>=expand("%:p:h") . "/" <CR>
 
 cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
+
+imap <S-Enter> <Esc>o
+
