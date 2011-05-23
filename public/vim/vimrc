@@ -10,8 +10,8 @@ syntax on
 if has("gui_macvim")
   colorscheme solarized
   set background=light
-  set lines=60
-  set columns=80
+  set lines=40
+  set columns=100
   set guifont=Menlo_Regular:h14
   set guicursor=n:blinkon0
   if $SHELL =~ '/\(sh\|csh\|bash\|tcsh\|zsh\)$'
@@ -79,4 +79,8 @@ map <Leader>tn :tabnew <C-R>=expand("%:p:h") . "/" <CR>
 cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 
 imap <S-Enter> <Esc>o
+
+if has("autocmd")
+  autocmd bufwritepost *vimrc source $MYVIMRC
+endif
 
