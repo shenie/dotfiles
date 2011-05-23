@@ -17,12 +17,12 @@ def conn
   ActiveRecord::Base.connection
 end
 
-class User < ActiveRecord::Base
-  attr_accessible :password, :password_confirmation
-
-  def passwd=(new_pass)
-    self.password = self.password_confirmation = new_pass
-  end
-end
+#class User < ActiveRecord::Base
+#  attr_accessible :password, :password_confirmation
+#
+#  def passwd=(new_pass)
+#    self.password = self.password_confirmation = new_pass
+#  end
+#end
 
 
