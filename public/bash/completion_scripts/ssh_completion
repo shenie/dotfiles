@@ -7,6 +7,7 @@ class SshCompletion
   end
   
   def matches
+    return all_targets if typed.nil?
     tmp_list = all_targets.select do |target|
       target[0, typed.length] == typed
     end
