@@ -88,7 +88,7 @@ if has("autocmd")
 endif
 
 :noremap <F2> :set hlsearch! hlsearch?<CR>
-:noremap <F3> ccl<CR>
+:noremap <F3> :ccl<CR>
 :noremap <F4> :BufExplorer<CR>
 :noremap <F5> zak<CR>
 :noremap <F6> ggV/^$<CR>zf<CR>:set hlsearch! hlsearch?<CR>
