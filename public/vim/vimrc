@@ -67,6 +67,7 @@ set laststatus=2                  " Show the status line all the time
 
 set foldcolumn=2
 set foldmethod=syntax
+" http://vim.wikia.com/wiki/All_folds_open_when_open_a_file
 set foldlevel=20
 
 "This changes directory but it is like autochdir
@@ -88,4 +89,7 @@ endif
 
 " Press F4 to toggle highlighting on/off, and show current value.
 :noremap <F4> :set hlsearch! hlsearch?<CR>
+
+" Toggle fold
+:noremap <F3> za<CR>
 
