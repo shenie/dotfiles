@@ -87,11 +87,9 @@ if has("autocmd")
   autocmd bufwritepost *vimrc source $MYVIMRC
 endif
 
-" Press F4 to toggle highlighting on/off, and show current value.
-:noremap <F4> :set hlsearch! hlsearch?<CR>
-
-" :noremap <F3> ggV/^$<CR>zf<CR>:set hlsearch! hlsearch?<CR>
-:noremap <F3> zak<CR>
-:noremap <F2> ccl<CR>
+:noremap <F2> :set hlsearch! hlsearch?<CR>
+:noremap <F3> ccl<CR>
+:noremap <F4> :BufExplorer<CR>
+:noremap <F5> zak<CR>
 
 autocmd bufreadpost *.rb :1,/^$/fo
