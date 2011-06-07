@@ -10,8 +10,8 @@ syntax on
 if has("gui_macvim")
   colorscheme solarized
   set background=light
-  set lines=40
-  set columns=100
+  set lines=55
+  set columns=120
   set guifont=Menlo_Regular:h14
   set guicursor=n:blinkon0
   if $SHELL =~ '/\(sh\|csh\|bash\|tcsh\|zsh\)$'
@@ -55,7 +55,7 @@ set number                        " Show line numbers.
 set ruler                         " Show cursor position.
 
 set incsearch                     " Highlight matches as you type.
-""set hlsearch                      " Highlight matches.
+set hlsearch                      " Highlight matches.
 
 set noswapfile                    " Swap files are annoying"
 set nobackup                      " Don't make a backup before overwriting a file.
@@ -66,7 +66,9 @@ set statusline=%<[%n]\ %F\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 set laststatus=2                  " Show the status line all the time
 
 set foldcolumn=2
-"autocmd FileType ruby setlocal foldmethod=syntax
+set foldmethod=syntax
+set foldlevel=20
+
 "This changes directory but it is like autochdir
 "autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
 
@@ -83,4 +85,7 @@ imap <S-Enter> <Esc>o
 if has("autocmd")
   autocmd bufwritepost *vimrc source $MYVIMRC
 endif
+
+" Press F4 to toggle highlighting on/off, and show current value.
+:noremap <F4> :set hlsearch! hlsearch?<CR>
 
