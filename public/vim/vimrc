@@ -66,7 +66,7 @@ set statusline=%<[%n]\ %F\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 set laststatus=2                  " Show the status line all the time
 
 set foldcolumn=2
-set foldmethod=syntax
+" set foldmethod=syntax
 " http://vim.wikia.com/wiki/All_folds_open_when_open_a_file
 set foldlevel=20
 
@@ -90,6 +90,6 @@ endif
 " Press F4 to toggle highlighting on/off, and show current value.
 :noremap <F4> :set hlsearch! hlsearch?<CR>
 
-" Toggle fold
-:noremap <F3> za<CR>
+:noremap <F3> ggV/^$<CR>zf<CR>:set hlsearch! hlsearch?<CR>
+:noremap <F2> ccl<CR>
 
