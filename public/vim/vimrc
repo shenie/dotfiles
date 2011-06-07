@@ -91,5 +91,6 @@ endif
 :noremap <F3> ccl<CR>
 :noremap <F4> :BufExplorer<CR>
 :noremap <F5> zak<CR>
+:noremap <F6> ggV/^$<CR>zf<CR>:set hlsearch! hlsearch?<CR>
 
-autocmd bufreadpost *.rb :1,/^$/fo
+" autocmd bufreadpost *.rb :1,/^$/fo
