@@ -90,6 +90,8 @@ endif
 " Press F4 to toggle highlighting on/off, and show current value.
 :noremap <F4> :set hlsearch! hlsearch?<CR>
 
-:noremap <F3> ggV/^$<CR>zf<CR>:set hlsearch! hlsearch?<CR>
+" :noremap <F3> ggV/^$<CR>zf<CR>:set hlsearch! hlsearch?<CR>
+:noremap <F3> zak<CR>
 :noremap <F2> ccl<CR>
 
+autocmd bufreadpost *.rb :1,/^$/fo
