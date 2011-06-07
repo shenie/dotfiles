@@ -1,3 +1,5 @@
 
 --type-add=html=.haml
+--type-add=css=.scss
+--type-add=css=.sass
 
