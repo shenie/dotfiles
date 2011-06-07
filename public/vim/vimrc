@@ -89,6 +89,6 @@ endif
 
 :noremap <F2> :set hlsearch! hlsearch?<CR>
 :noremap <F3> :ccl<CR>
-:noremap <F4> ggV/^$<CR>zf<CR>:set hlsearch! hlsearch?<CR>
+:noremap <F4> ggV/^$<CR>zf<CR>:set nohlsearch<CR>
 :noremap <F5> :BufExplorer<CR>
 
