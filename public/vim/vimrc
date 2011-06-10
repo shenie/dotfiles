@@ -37,9 +37,9 @@ set showmode                      " Display the mode you're in.
 
 set backspace=indent,eol,start    " Intuitive backspacing.
 
-set history=1000
+set history=2000
 
-set wrap                          "wrap lines
+set nowrap
 set linebreak                     "wrap lines at convenient points
 
 set hidden                        " Handle multiple buffers better.
@@ -87,8 +87,9 @@ if has("autocmd")
   autocmd bufwritepost *vimrc source $MYVIMRC
 endif
 
+:noremap <F1> :BufExplorer<CR>
 :noremap <F2> :set hlsearch! hlsearch?<CR>
 :noremap <F3> :ccl<CR>
 :noremap <F4> ggV/^$<CR>zf<CR>:set nohlsearch<CR>
-:noremap <F5> :BufExplorer<CR>
+:noremap <F5> :set wrap!<CR>
 

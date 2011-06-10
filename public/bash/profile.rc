@@ -40,6 +40,7 @@ alias doc='cd Documents'
 export JAVA_HOME=/Library/Java/Home
 export ANT_HOME=/usr/share/ant
 
+alias be='bundle exec'
 alias ss='script/server $*'
 alias sc='script/console $*'
 alias apr='touch tmp/restart.txt; sudo apachectl restart'
