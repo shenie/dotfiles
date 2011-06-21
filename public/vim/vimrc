@@ -93,3 +93,5 @@ endif
 :noremap <F4> :set wrap!<CR>
 :noremap <F5> ggV/^$<CR>zf<CR>:set nohlsearch<CR>
 
+map <D-j> gj
+map <D-k> gk
