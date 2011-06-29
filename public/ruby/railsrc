@@ -2,7 +2,7 @@ require 'logger'
 
 logger = Logger.new(STDOUT)
 
-Object.const_set(:RAILS_DEFAULT_LOGGER, logger)
+Rails.logger = logger
 ActiveRecord::Base.logger = logger
 
 def sql(query)
