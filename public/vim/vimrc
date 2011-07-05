@@ -92,6 +92,7 @@ endif
 :noremap <F3> :set wrap!<CR>
 :noremap <F4> :ccl<CR>
 :noremap <F5> ggV/^$<CR>zf<CR>:set nohlsearch<CR>
+:noremap <F6> 3h14x
 
 map <D-j> gj
 map <D-k> gk
