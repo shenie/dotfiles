@@ -25,6 +25,7 @@ export HISTCONTROL="ignoreboth"
 export HISTIGNORE="ls:h:exit:cd"
 export HISTSIZE=10000
 export HISTFILESIZE=10000
+export HISTTIMEFORMAT="%F %T "
 
 # comment out less setting because it is screwing up git pager
 # export LESS=-i
