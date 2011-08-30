@@ -7,10 +7,11 @@
   whitespace = nowarn
 [alias]
   co = checkout
-  st = status
+  st = status -s -b
   ci = commit
   sb = show-branch
-  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %f %Cgreen(%cr)%Creset'
+  up = !git fetch origin && git rebase origin/master
+  lg = log --graph --decorate --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %Cblue%aN%Creset'
   who = log --format="'%ai %h %aN %s'"
 [core]
   excludesfile = <%= PUBLIC_DIR %>/git/gitignore
