@@ -50,7 +50,7 @@ alias cpr=~/bin/check_push_required.sh
 alias cdw=~/bin/check_dirty_working_dir.sh
 
 alias gs='git st'
-alias glg='git lg'
+alias gg='git lg'
 alias gf='git fetch'
 alias gl='git pull'
 alias gp='git push'
