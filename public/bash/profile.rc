@@ -46,9 +46,6 @@ alias ss='script/server $*'
 alias sc='script/console $*'
 alias apr='touch tmp/restart.txt; sudo apachectl restart'
 
-alias cpr=~/bin/check_push_required.sh
-alias cdw=~/bin/check_dirty_working_dir.sh
-
 alias gs='git st'
 alias gg='git lg'
 alias gf='git fetch'
