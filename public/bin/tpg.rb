@@ -2,6 +2,7 @@
 
 require 'rubygems'
 require 'mechanize'
+require 'date'
 
 if ARGV.size != 2
   message = "Must supply username and password\n"
@@ -28,8 +29,11 @@ end
 
 agent.page.link_with(:text => 'Check your Account Usage').click
 
-
-agent.page.body.to_a.each { |l| 
+agent.page.body.split("\n").each { |l|
+  if l =~ /Current Billing Period:.*Ends: ([^<]*)/
+    days_left = Date.parse($1) - Date.today
+    puts "Current period ends [#{$1}]: #{days_left} days to go"
+  end
   if l =~ /Peak Downloads used: ([0-9.]* MB)/
     puts "Peak Downloads used: #{$1}"
   end
