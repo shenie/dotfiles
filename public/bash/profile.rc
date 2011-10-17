@@ -15,7 +15,7 @@ export PROMPT_COMMAND='echo -n -e "\033]0;`hostname -s`:`pwd | sed -e's/.*andy/~
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;33'
 
-export EDITOR=vi
+export EDITOR=vim
 export SVN_EDITOR=vi
 
 PATH=/usr/local/bin:/usr/local/sbin:/usr/local/git/bin:.:${PATH}:${HOME}/bin:/usr/local/mysql/bin

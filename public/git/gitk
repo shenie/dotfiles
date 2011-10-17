@@ -1,6 +1,6 @@
-set mainfont {Monaco 12}
-set textfont {Monaco 12}
-set uifont {Monaco 12}
+set mainfont {{Lucida Grande} 14}
+set textfont {Monaco 14}
+set uifont {{Lucida Grande} 14 bold}
 set tabstop 8
 set findmergefiles 0
 set maxgraphpct 50
@@ -8,6 +8,7 @@ set maxwidth 16
 set cmitmode patch
 set wrapcomment none
 set autoselect 1
+set autosellen 40
 set showneartags 1
 set hideremotes 0
 set showlocalchanges 1
@@ -24,12 +25,12 @@ set diffcontext 3
 set selectbgcolor gray85
 set extdifftool opendiff
 set perfile_attrs 0
-set geometry(main) 1349x856+5+27
+set geometry(main) 1141x889+1155+318
 set geometry(state) normal
-set geometry(topwidth) 1349
-set geometry(topheight) 368
-set geometry(pwsash0) "816 1"
-set geometry(pwsash1) "1176 1"
-set geometry(botwidth) 727
-set geometry(botheight) 483
+set geometry(topwidth) 1141
+set geometry(topheight) 289
+set geometry(pwsash0) "290 1"
+set geometry(pwsash1) "437 1"
+set geometry(botwidth) 363
+set geometry(botheight) 595
 set permviews {}
