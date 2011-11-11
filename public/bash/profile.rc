@@ -85,6 +85,7 @@ complete -C $HOME/.completion_scripts/rake_completion -o default rake
 complete -C $HOME/.completion_scripts/thor_completion -o default thor
 complete -C $HOME/.completion_scripts/grails_completion -o default grails
 complete -C $HOME/.completion_scripts/ssh_completion -o default ssh
+complete -C $HOME/.completion_scripts/ssh_completion -o default scp
 complete -C $HOME/.completion_scripts/list_apps_completion -o default list-apps.sh
 
 # From http://blog.peepcode.com/tutorials/2009/shell-method-missing
