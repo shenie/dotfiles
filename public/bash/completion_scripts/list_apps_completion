@@ -1,0 +1,35 @@
+#!/usr/bin/env ruby
+
+class ListAppsCompletion
+  
+  def initialize(command)
+    @command = command
+  end
+  
+  def matches
+    return all_targets if typed.nil?
+    tmp_list = all_targets.select do |target|
+      target[0, typed.length] == typed
+    end
+    if @command =~ /@/
+      tmp_list.collect { |c| "@#{c}" }
+    else
+      tmp_list
+    end
+  end
+  
+  private
+  
+  def typed
+    (@command[/\s(.+?)$/, 1] || '').split('@').last
+  end
+
+  def all_targets
+    File.open("#{ENV['HOME']}/.ssh/known_hosts").readlines.collect { |l| l.split(/[ ,\]]/).first.gsub('[', '') }.sort.uniq
+  end
+ 
+end
+
+puts ListAppsCompletion.new(ENV["COMP_LINE"]).matches
+
+exit 0
