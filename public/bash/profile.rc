@@ -7,7 +7,7 @@ export GIT_PS1_SHOWDIRTYSTATE=y
 export GIT_PS1_SHOWSTASHSTATE=y
 export GIT_PS1_SHOWUNTRACKEDFILES=y
 
-export PS1='\[\e[32;40m\][\A] \u@\h:\[\e[33;40m\]\w \[\e[34;1m\]$(__git_ps1 "(%s) ")\[\e[33;1m\]\$ \[\e[0m\]'
+export PS1='\[\e[33;40m\]\w \[\e[32;40m\]$(__git_ps1 "[%s]")\[\e[33;1m\]% \[\e[0m\]'
 
 # This can be used to automatically fix the terminal title after ssh to a remote box that changed it
 export PROMPT_COMMAND='echo -n -e "\033]0;`hostname -s`:`pwd | sed -e's/.*andy/~/'`\007"'
