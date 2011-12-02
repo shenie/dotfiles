@@ -4,6 +4,8 @@ logger = Logger.new(STDOUT)
 
 Rails.logger = logger
 ActiveRecord::Base.logger = logger
+Rails.cache.logger = logger
+ActiveResource::Base.logger = logger
 
 def sql(query)
   ActiveRecord::Base.connection.select_all(query)
