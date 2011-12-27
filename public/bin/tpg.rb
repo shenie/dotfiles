@@ -44,6 +44,7 @@ begin
     end
   }
 rescue => e
+  File.open("#{ENV['HOME']}/logs/page.html", 'w') { |f| f.puts agent.page.body }
   puts "Error: #{e}"
 end
 
