@@ -27,21 +27,26 @@ if agent.page.body =~ /Invalid username, customer ID, Mobile number or password/
   abort 'Could not login, please check your username and password'
 end
 
-agent.page.link_with(:text => 'Check your Account Usage').click
+begin
+  agent.page.links.find { |l| l.to_s == "Check Your Account Usage" }.click
 
-agent.page.body.split("\n").each { |l|
-  if l =~ /Current Billing Period:.*Ends: ([^<]*)/
-    days_left = Date.parse($1) - Date.today
-    puts "Current period ends [#{$1}]: #{days_left.to_i} days to go"
-  end
-  if l =~ /Peak Downloads used: ([0-9.]* MB)/
-    puts "Peak Downloads used: #{$1}"
-  end
+  agent.page.body.split("\n").each { |l|
+    if l =~ /Current Billing Period:.*Ends: ([^<]*)/
+      days_left = Date.parse($1) - Date.today
+      puts "Current period ends [#{$1}]: #{days_left.to_i} days to go"
+    end
+    if l =~ /Peak Downloads used: ([0-9.]* MB)/
+      puts "Peak Downloads used: #{$1}"
+    end
 
-  if l =~ /Off-Peak Downloads used: ([0-9.]* MB)/
-    puts "Off-Peak Downloads used: #{$1}"
-  end
-}
+    if l =~ /Off-Peak Downloads used: ([0-9.]* MB)/
+      puts "Off-Peak Downloads used: #{$1}"
+    end
+  }
+rescue => e
+  puts "Error: #{e}"
+end
 
+puts "Logging out..."
 agent.page.link_with(:text => 'Log Out').click
 
