@@ -4,6 +4,7 @@ silent! call pathogen#runtime_append_all_bundles()
 
 let mapleader = ","
 let g:netrw_liststyle= 3
+let g:netrw_list_hide= '\(^\|\s\s\)\zs\.\S\+'
 
 syntax on
 
