@@ -16,11 +16,9 @@ password = ARGV[1]
 agent = Mechanize.new
 
 agent.get('http://tpg.com.au')
-form = agent.page.forms.first
+form = agent.page.forms[1]
 form.check_username = username
 form.password = password
-form.radiobuttons[0].checked = true
-form.radiobuttons[1].checked = false
 form.submit
 
 if agent.page.body =~ /Invalid username, customer ID, Mobile number or password/
