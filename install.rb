@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
 
 require 'fileutils'
-require 'ftools'
 require "pp"
 require "yaml"
 require "erb"
