@@ -98,3 +98,7 @@ endif
 
 map <D-j> gj
 map <D-k> gk
+map <D-[> <<
+map <D-]> >>
+vmap <D-[> <gv
+vmap <D-]> >gv
