@@ -107,9 +107,9 @@ vmap <D-[> <gv
 vmap <D-]> >gv
 
 " Bubble single line
-nmap <D-Up> ddkP
-nmap <D-Down> ddp
+nmap <D-Up> [e
+nmap <D-Down> ]e
 
 " Bubble multiple lines
-vmap <D-UP> xkP`[V`]
-vmap <D-Down> xp`[V`]
+vmap <D-UP> [egv
+vmap <D-Down> ]egv
