@@ -96,9 +96,20 @@ endif
 " Delete :wip => true when the cursor is on 'w'
 :noremap <F6> 3h14x
 
+" Move cursor up/down displayed lines (i.e. when long line is wrapped)
 map <D-j> gj
 map <D-k> gk
+
+" TextMate style indentation
 map <D-[> <<
 map <D-]> >>
 vmap <D-[> <gv
 vmap <D-]> >gv
+
+" Bubble single line
+nmap <D-Up> ddkP
+nmap <D-Down> ddp
+
+" Bubble multiple lines
+vmap <D-UP> xkP`[V`]
+vmap <D-Down> xp`[V`]
