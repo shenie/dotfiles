@@ -2,6 +2,7 @@ set nocompatible                  " Must come first because it changes other opt
 
 silent! call pathogen#runtime_append_all_bundles()
 
+let macvim_skip_cmd_opt_movement = 1
 let mapleader = ","
 let g:netrw_liststyle= 3
 let g:netrw_list_hide= '\(^\|\s\s\)\zs\.\S\+'
