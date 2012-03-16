@@ -23,4 +23,5 @@
   default = --all
 [github]
   user = shenie
-
+[push]
+	default = current
