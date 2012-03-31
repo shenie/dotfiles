@@ -48,13 +48,6 @@ when /^[A-Za-z0-9_\-\/]+\.mate$/
   gem_to_open = command.first.gsub(/\.mate$/, '')
   run "gem which #{gem_to_open} | tail -1 | xargs dirname | sed -e's/$/\\/../' | xargs mate"
 
-when /^[A-Za-z0-9_\-\/]+\.cukes$/
-  # Run cucumber with tag
-  # @example
-  #   wip.cukes
-  tag = command.first.gsub(/\.cukes$/, '')
-  run "cucumber -r features/ -t @#{tag} features/"
-
 when /^[A-Za-z0-9_\-\/]+\.tmproj$/
   # Open project with textmate
   # @example
