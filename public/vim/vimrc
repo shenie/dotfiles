@@ -94,8 +94,6 @@ endif
 :noremap <F3> :set wrap!<CR>
 :noremap <F4> :ccl<CR>
 :noremap <F5> ggV/^$<CR>zf<CR>:set nohlsearch<CR>
-" Delete :wip => true when the cursor is on 'w'
-:noremap <F6> 3h14x
 
 " Move cursor up/down displayed lines (i.e. when long line is wrapped)
 map <D-j> gj
