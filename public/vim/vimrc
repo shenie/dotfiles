@@ -11,7 +11,7 @@ syntax on
 
 if has("gui_macvim")
   colorscheme solarized
-  set background=light
+  set background=dark
   set lines=55
   set columns=120
   set guifont=Menlo_Regular:h14
@@ -25,6 +25,21 @@ if has("gui_macvim")
 else
   colorscheme midnight
 endif
+
+" I have real trouble seeing which matching paren the curson is on when it highlights both.
+" This turn the matching highlight to a less subtle red fg color
+" highlight MatchParen guifg=black
+
+" Search highlight background color is distracting and makes things hard to read.
+" Use an unusal fg color with underline is enough
+" highlight Search     guifg=black guibg=grey    gui=underline
+
+" Copy Visual mode color from ir_black
+" hi Visual  guifg=NONE guibg=#262D51     gui=NONE      ctermfg=NONE        ctermbg=darkgray    cterm=NONE
+
+hi CursorLine guibg=grey
+
+set cursorline
 
 set noautoindent
 set autowriteall
