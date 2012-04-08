@@ -87,6 +87,12 @@ set foldcolumn=2
 " http://vim.wikia.com/wiki/All_folds_open_when_open_a_file
 set foldlevel=20
 
+" make tab completion for files/buffers act like bash
+set wildmenu
+set shell=bash
+set switchbuf=useopen
+
+
 "This changes directory but it is like autochdir
 "autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
 
