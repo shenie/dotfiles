@@ -37,6 +37,8 @@ endif
 
 hi CursorLine guibg=grey
 
+set wildignore+=*.o,*.obj,.git,*.class,vendor,*.log
+
 set cursorline
 
 set noautoindent
