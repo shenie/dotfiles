@@ -92,7 +92,6 @@ set wildmenu
 set shell=bash
 set switchbuf=useopen
 
-
 "This changes directory but it is like autochdir
 "autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
 
@@ -129,12 +128,12 @@ vnoremap <D-[> <gv
 vnoremap <D-]> >gv
 
 " Bubble single line
-noremap <D-Up> [e
-noremap <D-Down> ]e
+map <D-Up> [e
+map <D-Down> ]e
 
 " Bubble multiple lines
-vnoremap <D-UP> [egv
-vnoremap <D-Down> ]egv
+vmap <D-UP> [egv
+vmap <D-Down> ]egv
 
 nnoremap <Leader>e :CommandTFlush<cr>\|:CommandT %%<cr>
 
