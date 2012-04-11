@@ -95,6 +95,8 @@ set switchbuf=useopen
 "This changes directory but it is like autochdir
 "autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
 
+inoremap jk <esc>
+
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
 noremap <Leader>n :Ve<CR>
