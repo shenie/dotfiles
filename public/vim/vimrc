@@ -101,8 +101,6 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <Leader>n :Ve<CR>
 map <Leader>h :He<CR>
 
-map <Leader>e :CommandTFlush<cr>\|:CommandT %%<cr>
-
 map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 map <Leader>tn :tabnew <C-R>=expand("%:p:h") . "/" <CR>
 
@@ -137,6 +135,8 @@ nmap <D-Down> ]e
 " Bubble multiple lines
 vmap <D-UP> [egv
 vmap <D-Down> ]egv
+
+map <Leader>e :CommandTFlush<cr>\|:CommandT %%<cr>
 
 " Rails project navigation shortcuts
 map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
