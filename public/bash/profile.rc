@@ -17,7 +17,7 @@ export GREP_COLOR='1;33'
 
 export EDITOR=vim
 
-PATH=/usr/local/bin:/usr/local/sbin:/usr/local/git/bin:.:${PATH}:${HOME}/bin:/usr/local/mysql/bin
+PATH=/usr/local/bin:/usr/local/sbin:/usr/local/git/bin:.:${PATH}:${HOME}/usr/local/bin:${HOME}/bin:/usr/local/mysql/bin
 export MANPATH=/usr/local/git/man:$MANPATH
 
 export HISTCONTROL="ignoreboth"
