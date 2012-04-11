@@ -98,15 +98,15 @@ set switchbuf=useopen
 
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
-map <Leader>n :Ve<CR>
-map <Leader>h :He<CR>
+noremap <Leader>n :Ve<CR>
+noremap <Leader>h :He<CR>
 
-map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
-map <Leader>tn :tabnew <C-R>=expand("%:p:h") . "/" <CR>
+nnoremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
+nnoremap <Leader>tn :tabnew <C-R>=expand("%:p:h") . "/" <CR>
 
-cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
+cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 
-imap <S-Enter> <Esc>o
+inoremap <S-Enter> <Esc>o
 
 if has("autocmd")
   autocmd bufwritepost *vimrc source $MYVIMRC
@@ -119,38 +119,38 @@ endif
 " :noremap <F5> ggV/^$<CR>zf<CR>:set nohlsearch<CR>
 
 " Move cursor up/down displayed lines (i.e. when long line is wrapped)
-map <D-j> gj
-map <D-k> gk
+noremap <D-j> gj
+noremap <D-k> gk
 
 " TextMate style indentation
-map <D-[> <<
-map <D-]> >>
-vmap <D-[> <gv
-vmap <D-]> >gv
+noremap <D-[> <<
+noremap <D-]> >>
+vnoremap <D-[> <gv
+vnoremap <D-]> >gv
 
 " Bubble single line
-nmap <D-Up> [e
-nmap <D-Down> ]e
+noremap <D-Up> [e
+noremap <D-Down> ]e
 
 " Bubble multiple lines
-vmap <D-UP> [egv
-vmap <D-Down> ]egv
+vnoremap <D-UP> [egv
+vnoremap <D-Down> ]egv
 
-map <Leader>e :CommandTFlush<cr>\|:CommandT %%<cr>
+nnoremap <Leader>e :CommandTFlush<cr>\|:CommandT %%<cr>
 
 " Rails project navigation shortcuts
-map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
-map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
-map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
-map <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
-map <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
-map <leader>gs :CommandTFlush<cr>\|:CommandT app/assets/stylesheets<cr>
-map <leader>gj :CommandTFlush<cr>\|:CommandT app/assets/javascripts<cr>
-map <leader>gd :CommandTFlush<cr>\|:CommandT db/migrate<cr>
-map <leader>gt :CommandTFlush<cr>\|:CommandT spec<cr>
+nnoremap <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
+nnoremap <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
+nnoremap <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
+nnoremap <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
+nnoremap <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
+nnoremap <leader>gs :CommandTFlush<cr>\|:CommandT app/assets/stylesheets<cr>
+nnoremap <leader>gj :CommandTFlush<cr>\|:CommandT app/assets/javascripts<cr>
+nnoremap <leader>gd :CommandTFlush<cr>\|:CommandT db/migrate<cr>
+nnoremap <leader>gt :CommandTFlush<cr>\|:CommandT spec<cr>
 
-map <leader>gr :topleft :split config/routes.rb<cr>
-map <leader>gg :topleft 100 :split Gemfile<cr>
+nnoremap <leader>gr :topleft :split config/routes.rb<cr>
+nnoremap <leader>gg :topleft 100 :split Gemfile<cr>
 
 " Jump between the last 2 files
 nnoremap <leader><leader> <C-^>

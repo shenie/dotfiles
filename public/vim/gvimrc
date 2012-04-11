@@ -1,5 +1,5 @@
 macmenu &File.New\ Tab key=<nop>
-map <D-t> :CommandT<CR>
+nnoremap <D-t> :CommandT<CR>
 
 macmenu &Tools.Make key=<nop>
-map <D-b> gf
+nnoremap <D-b> gf
