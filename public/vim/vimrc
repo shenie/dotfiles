@@ -20,6 +20,7 @@ if has("gui_macvim")
     let s:path = system("echo echo VIMPATH'${PATH}' | $SHELL -l")
     let $PATH = matchstr(s:path, 'VIMPATH\zs.\{-}\ze\n')
   endif
+  nnoremap <D-N> :CommandTFlush<CR>:CommandT<CR>
 else
   colorscheme midnight
 endif
@@ -110,7 +111,10 @@ cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 inoremap <S-Enter> <Esc>o
 
 if has("autocmd")
-  autocmd bufwritepost *vimrc source $MYVIMRC
+  augroup mygroup
+    autocmd!
+    autocmd bufwritepost *vimrc source $MYVIMRC
+  augroup END
 endif
 
 :noremap <F1> :BufExplorer<CR>
