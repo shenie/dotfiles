@@ -82,6 +82,7 @@ set directory=/tmp//,.            " Keep swap files in one location
 
 set statusline=%<[%n]\ %F\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 set laststatus=2                  " Show the status line all the time
+hi statusline guibg=red
 
 set foldcolumn=2
 " set foldmethod=syntax
@@ -141,7 +142,7 @@ map <D-Down> ]e
 vmap <D-UP> [egv
 vmap <D-Down> ]egv
 
-nnoremap <Leader>e :CommandTFlush<cr>\|:CommandT %%<cr>
+nmap <Leader>e :CommandTFlush<cr>\|:CommandT %%<cr>
 
 " Rails project navigation shortcuts
 nnoremap <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
@@ -159,6 +160,16 @@ nnoremap <leader>gg :topleft 100 :split Gemfile<cr>
 
 " Jump between the last 2 files
 nnoremap <leader><leader> <C-^>
+
+" rSpec shortcuts
+noremap <leader>af V<esc>?it.*do<cr>/ do<cr>i, focus: true<esc>gv<esc>:set nohlsearch<cr>
+noremap <leader>df V<esc>$?, focus: true<cr>dfegv<esc>:set nohlsearch<cr>
+
+" Split window movement shortcuts
+noremap <D-M-Right> <C-W>l
+noremap <D-M-Left> <C-W>h
+noremap <D-M-Up> <C-W>k
+noremap <D-M-Down> <C-W>j
 
 " Remap the tab key to do autocompletion or indentation depending on the context
 " from http://www.vim.org/tips/tip.php?tip_id=102
