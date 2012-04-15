@@ -162,8 +162,8 @@ nnoremap <leader>gg :topleft 100 :split Gemfile<cr>
 nnoremap <leader><leader> <C-^>
 
 " rSpec shortcuts
-noremap <leader>af V<esc>?it.*do<cr>/ do<cr>i, focus: true<esc>gv<esc>:set nohlsearch<cr>
-noremap <leader>df V<esc>$?, focus: true<cr>dfegv<esc>:set nohlsearch<cr>
+noremap <leader>af mq?it.*do<cr>/ do<cr>:noh<cr>i, focus: true<esc>`q
+noremap <leader>df mq$?, focus: true<cr>:noh<cr>dfe`q
 
 " Split window movement shortcuts
 noremap <D-M-Right> <C-W>l
