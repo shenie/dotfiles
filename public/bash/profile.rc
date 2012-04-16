@@ -39,6 +39,7 @@ alias dir='ls -l'
 alias ls='ls -aF'
 alias watchlog='bin/watchlog'
 alias readlog='bin/readlog'
+alias mm=mvim
 
 export JAVA_HOME=/Library/Java/Home
 export ANT_HOME=/usr/share/ant
