@@ -135,12 +135,12 @@ vnoremap <D-[> <gv
 vnoremap <D-]> >gv
 
 " Bubble single line
-map <D-Up> [e
-map <D-Down> ]e
+map <D-S-Up> [e
+map <D-S-Down> ]e
 
 " Bubble multiple lines
-vmap <D-UP> [egv
-vmap <D-Down> ]egv
+vmap <D-S-UP> [egv
+vmap <D-S-Down> ]egv
 
 nmap <Leader>e :CommandTFlush<cr>\|:CommandT %%<cr>
 
@@ -166,10 +166,10 @@ noremap <leader>af mq?it.*do<cr>/ do<cr>:noh<cr>i, focus: true<esc>`q
 noremap <leader>df mq$?, focus: true<cr>:noh<cr>dfe`q
 
 " Split window movement shortcuts
-noremap <D-M-Right> <C-W>l
-noremap <D-M-Left> <C-W>h
-noremap <D-M-Up> <C-W>k
-noremap <D-M-Down> <C-W>j
+noremap <D-Right> <C-W>l
+noremap <D-Left> <C-W>h
+noremap <D-Up> <C-W>k
+noremap <D-Down> <C-W>j
 
 " Remap the tab key to do autocompletion or indentation depending on the context
 " from http://www.vim.org/tips/tip.php?tip_id=102
