@@ -38,7 +38,7 @@ endif
 
 hi CursorLine guibg=grey
 
-set wildignore+=*.o,*.obj,.git,*.class,vendor,*.log,*.jar
+set wildignore+=*.o,*.obj,.git,*.class,vendor,*.log,*.jar,tmp
 
 " set cursorline
 
