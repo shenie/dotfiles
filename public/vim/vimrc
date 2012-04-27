@@ -98,6 +98,7 @@ set switchbuf=useopen
 "autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
 
 inoremap jk <esc>
+inoremap <C-l> <space>=> 
 
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
@@ -162,8 +163,8 @@ nnoremap <leader>gg :topleft 100 :split Gemfile<cr>
 nnoremap <leader><leader> <C-^>
 
 " rSpec shortcuts
-noremap <leader>af mq?it.*do<cr>/ do<cr>:noh<cr>i, focus: true<esc>`q
-noremap <leader>df mq$?, focus: true<cr>:noh<cr>dfe`q
+noremap <leader>af mq?it.*do<cr>/ do<cr>:noh<cr>i, :focus => true<esc>`q
+noremap <leader>df mq$?, :focus => true<cr>:noh<cr>dfe`q
 
 " Split window movement shortcuts
 noremap <D-Right> <C-W>l
@@ -181,6 +182,6 @@ function! InsertTabWrapper()
         return "\<c-p>"
     endif
 endfunction
-inoremap <tab> <c-r>=InsertTabWrapper()<cr>
-inoremap <s-tab> <c-n>
+" inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+" inoremap <s-tab> <c-n>
 
