@@ -11,7 +11,7 @@ syntax on
 
 if has("gui_macvim")
   colorscheme solarized
-  set background=dark
+  set background=light
   set lines=55
   set columns=120
   set guifont=Menlo_Regular:h14
@@ -38,7 +38,7 @@ endif
 
 hi CursorLine guibg=grey
 
-set wildignore+=*.o,*.obj,.git,*.class,vendor,*.log,*.jar,tmp
+set wildignore+=*.o,*.obj,.git,*.class,vendor,*.log,*.jar,tmp,public/assets
 
 " set cursorline
 
@@ -142,6 +142,9 @@ map <D-S-Down> ]e
 " Bubble multiple lines
 vmap <D-S-UP> [egv
 vmap <D-S-Down> ]egv
+
+" IntelliJ line duplication
+vnoremap <D-d> yPgv<Esc>
 
 nmap <Leader>e :CommandTFlush<cr>\|:CommandT %%<cr>
 
