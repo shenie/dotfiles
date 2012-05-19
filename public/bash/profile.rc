@@ -17,7 +17,7 @@ export GREP_COLOR='1;33'
 
 export EDITOR=vim
 
-PATH=/usr/local/bin:/usr/local/sbin:/usr/local/git/bin:.:${PATH}:${HOME}/usr/local/bin:${HOME}/bin:/usr/local/mysql/bin
+PATH=/usr/local/bin:/usr/local/sbin:/usr/local/git/bin:.:${PATH}:${HOME}/usr/local/bin:${HOME}/bin:/usr/local/mysql/bin:${HOME}/.rbenv/bin
 export MANPATH=/usr/local/git/man:$MANPATH:$HOME/usr/local/lib/node_modules/npm/man:$HOME/usr/local/share/man
 
 export HISTCONTROL="ignoreboth"
@@ -113,5 +113,4 @@ growldone() {
   fi
 }
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
+eval "$(rbenv init -)"
