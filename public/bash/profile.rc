@@ -113,4 +113,3 @@ growldone() {
   fi
 }
 
-eval "$(rbenv init -)"
