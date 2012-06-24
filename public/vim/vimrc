@@ -145,6 +145,7 @@ vmap <D-S-Down> ]egv
 
 " IntelliJ line duplication
 vnoremap <D-d> yPgv<Esc>
+nnoremap <D-d> yymqP`q
 
 nmap <Leader>e :CommandTFlush<cr>\|:CommandT %%<cr>
 
