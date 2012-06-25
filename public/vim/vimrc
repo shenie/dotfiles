@@ -122,6 +122,8 @@ endif
 :noremap <F1> :BufExplorer<CR>
 :noremap <F2> :noh<CR>
 :noremap <F3> :set wrap!<CR>
+" highlight current word without moving cursor
+:noremap # mq*`q
 " :noremap <F4> :ccl<CR>
 " :noremap <F5> ggV/^$<CR>zf<CR>:set nohlsearch<CR>
 
