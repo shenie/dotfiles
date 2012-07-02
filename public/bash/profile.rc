@@ -1,5 +1,7 @@
 stty -ixon
 
+export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:/usr/local/mysql/lib/"
+
 CDPATH=".:~:~/dev"
 
 . ~/.git-completion.bash
