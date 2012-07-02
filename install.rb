@@ -21,11 +21,12 @@ raise "#{PRIVATE_DIR} does not exists" unless File.exist? PRIVATE_DIR
 CONFIG = YAML::load(ERB.new(File.readlines("#{PRIVATE_DIR}/config.yml").join).result)
 SETTINGS = CONFIG[HOST]
 
+abort "NO SETTINGS FOUND in config for host #{HOST}" if SETTINGS.nil?
 
 def install_link(src, file)
   link = file =~ /^\// ? file : "#{HOME}/#{file}" 
   
-  if File.exist?(link) && !File.symlink?(link) && !File.compare(link, src)
+  if File.exist?(link) && !File.symlink?(link) && !File.identical?(link, src)
     printf "        #{link} is not a symlink and different to #{src}\n"
   else
     remove_file(link) if File.exist?(link) || File.symlink?(link)
