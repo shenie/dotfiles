@@ -119,9 +119,14 @@ if has("autocmd")
   augroup END
 endif
 
-:noremap <F1> :BufExplorer<CR>
+" Buffer related shortcuts
+:noremap <D-e> :BufExplorer<CR>
+" Jump between the last 2 buffers
+nnoremap <leader><leader> <C-^>
+
 :noremap <F2> :noh<CR>
 :noremap <F3> :set wrap!<CR>
+
 " highlight current word without moving cursor
 :noremap # mq*`q
 " :noremap <F4> :ccl<CR>
@@ -164,9 +169,6 @@ nnoremap <leader>gt :CommandTFlush<cr>\|:CommandT spec<cr>
 
 nnoremap <leader>gr :topleft :split config/routes.rb<cr>
 nnoremap <leader>gg :topleft 100 :split Gemfile<cr>
-
-" Jump between the last 2 files
-nnoremap <leader><leader> <C-^>
 
 " rSpec shortcuts
 noremap <leader>af mq$?it ['"].*['"] do<cr>$? do<cr>:noh<cr>i, :focus => true<esc>`q
