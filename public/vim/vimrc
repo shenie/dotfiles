@@ -42,7 +42,7 @@ set wildignore+=*.o,*.obj,.git,*.class,vendor,*.log,*.jar,tmp,public/assets
 
 " set cursorline
 
-set noautoindent
+set autoindent
 set autowriteall
 set autoread
 
