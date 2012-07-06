@@ -119,6 +119,11 @@ if has("autocmd")
   augroup END
 endif
 
+" Fugitive shortcuts
+:cnoremap st Gstatus<CR>
+:cnoremap ci Gcommit<CR>
+:cnoremap diff Gdiff<CR>
+
 " Buffer related shortcuts
 :noremap <D-e> :BufExplorer<CR>
 " Jump between the last 2 buffers
