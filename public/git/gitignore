@@ -6,3 +6,5 @@ CVS
 *.iws
 .rake_tasks~
 .*.swp
+tags
+brakeman.html
