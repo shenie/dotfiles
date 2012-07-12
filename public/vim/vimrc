@@ -174,6 +174,11 @@ nnoremap <leader>gg :topleft 100 :split Gemfile<cr>
 noremap <leader>af mq$?it ['"].*['"] do<cr>$? do<cr>:noh<cr>i, :focus => true<esc>`q
 noremap <leader>df mq$?, :focus => true<cr>:noh<cr>dfe`q
 
+" Fugitive shortcuts
+nnoremap <leader>st :Gstatus<CR>
+nnoremap <leader>ci :Gcommit<CR>
+nnoremap <leader>diff :Gdiff<CR>
+
 " Split window movement shortcuts
 noremap <D-Right> <C-W>l
 noremap <D-Left> <C-W>h
