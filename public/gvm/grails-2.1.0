@@ -1,0 +1,9 @@
+
+rm ~/dev/tools/grails
+rm ~/dev/tools/groovy
+rm ~/.groovy
+
+ln -s ~/dev/tools/versions/grails-2.1.0 ~/dev/tools/grails
+ln -s ~/dev/tools/versions/groovy-1.7.8 ~/dev/tools/groovy
+ln -s ~/Dropbox/siteminder/setups/groovy-1.7.8 ~/.groovy
+
