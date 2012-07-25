@@ -123,6 +123,8 @@ endif
 :noremap <D-e> :BufExplorer<CR>
 " Jump between the last 2 buffers
 nnoremap <leader><leader> <C-^>
+" Go to previous buffer and delete this current buffer
+nnoremap <leader>q <C-^>:bd#<CR>
 
 :noremap <F2> :noh<CR>
 :noremap <F3> :set wrap!<CR>
