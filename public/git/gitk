@@ -1,10 +1,10 @@
-set mainfont {{Lucida Grande} 14}
+set mainfont {{Lucida Grande} 15}
 set textfont {Monaco 14}
-set uifont {{Lucida Grande} 14 bold}
+set uifont {{Lucida Grande} 9 bold}
 set tabstop 8
 set findmergefiles 0
 set maxgraphpct 50
-set maxwidth 16
+set maxwidth 20
 set cmitmode patch
 set wrapcomment none
 set autoselect 1
@@ -25,12 +25,12 @@ set diffcontext 3
 set selectbgcolor gray85
 set extdifftool opendiff
 set perfile_attrs 0
-set geometry(main) 1141x889+1155+318
+set geometry(main) 1542x912+513+183
 set geometry(state) normal
-set geometry(topwidth) 1141
-set geometry(topheight) 289
-set geometry(pwsash0) "290 1"
-set geometry(pwsash1) "437 1"
-set geometry(botwidth) 363
-set geometry(botheight) 595
+set geometry(topwidth) 1542
+set geometry(topheight) 302
+set geometry(pwsash0) "711 1"
+set geometry(pwsash1) "974 1"
+set geometry(botwidth) 666
+set geometry(botheight) 605
 set permviews {}
