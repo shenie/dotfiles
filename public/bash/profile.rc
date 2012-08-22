@@ -63,8 +63,6 @@ alias gka='gitk --all'
 alias gcv='git cherry -v master'
 alias gnp='git cherry -v'
 alias gsb='git show-branch'
-alias gmo='git merge origin/master'
-alias gro='git rebase origin/master'
 
 
 # make performance better by doing a 
