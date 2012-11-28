@@ -82,6 +82,10 @@ tf() {
   echo -n -e "\033]0;${1}\007"; tail -f $1
 }
 
+ta() {
+  tmux attach -t `tmux ls | grep ${1} | head -1 | cut -d':' -f1`
+}
+
 # Completions
 complete -C $HOME/.completion_scripts/rake_completion -o default rake
 complete -C $HOME/.completion_scripts/thor_completion -o default thor
