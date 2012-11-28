@@ -40,8 +40,6 @@ alias cp='cp -i'
 alias h=history
 alias dir='ls -l'
 alias ls='ls -aF'
-alias watchlog='bin/watchlog'
-alias readlog='bin/readlog'
 alias mm=mvim
 
 export JAVA_HOME=/Library/Java/Home
@@ -67,11 +65,6 @@ alias gsb='git show-branch'
 
 # make performance better by doing a 
 # alias gr='git repack -a -d'
-
-# alias svnadd='svn st | egrep "^\?" | while read st file; do svn add "$file"; done;'
-# alias svnrm='svn st | egrep "^!" | while read st file; do svn rm "$file"; done;'
-# alias svnrevert='svn st | egrep "^[MCDA]" | while read st file; do svn revert "$file"; done;'
-# alias svnopen='svn st | sed -e"s/\?//" | xargs open'
 
 pushdgem() {
   pushd `gem which $1 | tail -1 | xargs dirname`
