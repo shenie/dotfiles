@@ -20,7 +20,7 @@ export GREP_COLOR='1;33'
 
 export EDITOR=vim
 
-PATH=.:./bin:${HOME}/usr/local/bin:/usr/local/bin:/usr/local/sbin:/usr/local/git/bin:${PATH}:${HOME}/bin:/usr/local/mysql/bin:${HOME}/.rbenv/bin:${HOME}/dev/tools/innotop:${HOME}/dev/tools/rabbitmq/sbin
+PATH=${HOME}/usr/local/bin:/usr/local/bin:/usr/local/sbin:/usr/local/git/bin:${PATH}:${HOME}/bin:/usr/local/mysql/bin:${HOME}/.rbenv/bin:${HOME}/dev/tools/innotop:${HOME}/dev/tools/rabbitmq/sbin
 export MANPATH=/usr/local/git/man:$MANPATH:$HOME/usr/local/lib/node_modules/npm/man:$HOME/usr/local/share/man
 
 export HISTCONTROL="ignoreboth"
