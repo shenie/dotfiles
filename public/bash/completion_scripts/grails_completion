@@ -27,7 +27,7 @@ class GrailsCompletion
   end
   
   def cache_file
-    "#{ENV['GRAILS_HOME']}/.grails_targets~"
+    "#{ENV['HOME']}/.grails_targets~"
   end
   
   def targets_from_cache
