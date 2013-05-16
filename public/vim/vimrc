@@ -1,5 +1,28 @@
 set nocompatible                  " Must come first because it changes other options.
 
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+" My Bundles here:
+"
+" original repos on github
+" Bundle 'tpope/vim-fugitive'
+" Bundle 'Lokaltog/vim-easymotion'
+" Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Bundle 'tpope/vim-rails.git'
+" vim-scripts repos
+" Bundle 'L9'
+" Bundle 'FuzzyFinder'
+" non github repos
+"  Bundle 'git://git.wincent.com/command-t.git'
+Bundle 'https://github.com/Valloric/YouCompleteMe.git'
+
+
 silent! call pathogen#runtime_append_all_bundles()
 
 let macvim_skip_cmd_opt_movement = 1
@@ -10,8 +33,8 @@ let g:netrw_list_hide= '\(^\|\s\s\)\zs\.\S\+'
 syntax on
 
 if has("gui_macvim")
-  colorscheme solarized
-  set background=light
+" colorscheme solarized
+" set background=light
   set lines=55
   set columns=120
   set guifont=Menlo_Regular:h14
@@ -22,7 +45,7 @@ if has("gui_macvim")
   endif
   nnoremap <D-N> :CommandTFlush<CR>:CommandT<CR>
 else
-  colorscheme midnight
+" colorscheme midnight
 endif
 
 " I have real trouble seeing which matching paren the curson is on when it highlights both.
@@ -36,7 +59,7 @@ endif
 " Copy Visual mode color from ir_black
 " hi Visual  guifg=NONE guibg=#262D51     gui=NONE      ctermfg=NONE        ctermbg=darkgray    cterm=NONE
 
-hi CursorLine guibg=grey
+" hi CursorLine guibg=grey
 
 set wildignore+=*.o,*.obj,.git,*.class,vendor,*.log,*.jar,tmp,public/assets
 
