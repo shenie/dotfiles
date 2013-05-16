@@ -5,3 +5,4 @@ public/vim/.netrwbook
 .dropbox
 *Icon*
 private
+public/vim/bundle/YouCompleteMe
