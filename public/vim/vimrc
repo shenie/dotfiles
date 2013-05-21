@@ -35,8 +35,8 @@ syntax on
 if has("gui_macvim")
 " colorscheme solarized
 " set background=light
-  set lines=55
-  set columns=120
+" set lines=55
+" set columns=120
   set guifont=Menlo_Regular:h14
   set guicursor=n:blinkon0
   if $SHELL =~ '/\(sh\|csh\|bash\|tcsh\|zsh\)$'
