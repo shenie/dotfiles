@@ -15,7 +15,6 @@ end
 
 begin
   require 'hirb'
-  Hirb.enable
 rescue LoadError => err
   warn "Couldn't load hirb: #{err}"
 end
