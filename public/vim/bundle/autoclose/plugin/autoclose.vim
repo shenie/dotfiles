@@ -86,7 +86,7 @@ fun <SID>ToggleAutoCloseMappings() " --- {{{2
         inoremap <silent> [ [<C-R>=<SID>CloseStackPush(']')<CR>
         inoremap <silent> ] <C-R>=<SID>CloseStackPop(']')<CR>
         "inoremap <silent> { {<C-R>=<SID>CloseStackPush('}')<CR>
-        inoremap <silent> { <C-R>=<SID>OpenSpecial('{','}')<CR>
+        "inoremap <silent> { <C-R>=<SID>OpenSpecial('{','}')<CR>
         inoremap <silent> } <C-R>=<SID>CloseStackPop('}')<CR>
         inoremap <silent> <BS> <C-R>=<SID>OpenCloseBackspace()<CR>
         inoremap <silent> <C-h> <C-R>=<SID>OpenCloseBackspace()<CR>
