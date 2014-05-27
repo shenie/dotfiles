@@ -1,10 +1,7 @@
 #!/bin/bash
 
 if [ -e application.properties ] ; then
-  echo "Found application.properties"
-
   current=$(realpath $GRAILS_HOME |cut -d'/' -f6)
-  echo "Using grails ${current}"
 
   required=$(grep grails.version application.properties | cut -d= -f 2)
 
