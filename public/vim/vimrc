@@ -42,6 +42,7 @@ Plugin 'jlanzarotta/bufexplorer'
 Plugin 'godlygeek/tabular'
 Plugin 'altercation/solarized'
 Plugin 'tomtom/tcomment_vim'
+Plugin 'shenie/AutoClose'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
