@@ -6,3 +6,5 @@ public/vim/.netrwbook
 *Icon*
 private
 public/vim/bundle/YouCompleteMe
+public/vim/bundle/vim-snippets
+public/vim/bundle/ultisnips
