@@ -13,8 +13,6 @@ Plugin 'gmarik/vundle'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-" Plugin 'tpope/vim-fugitive'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 " git repos on your local machine (i.e. when working on your own plugin)
@@ -27,6 +25,8 @@ Plugin 'gmarik/vundle'
 
 " Git plugin not hosted on GitHub
 Plugin 'git://git.wincent.com/command-t.git'
+
+" plugin on GitHub repo
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -37,12 +37,11 @@ Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-ragtag'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-taglist'
-Plugin 'tpope/vim-tcomment'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'godlygeek/tabular'
 Plugin 'altercation/solarized'
+Plugin 'tomtom/tcomment_vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
