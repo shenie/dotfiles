@@ -5,7 +5,7 @@ if [ -e application.properties ] ; then
 
   required=$(grep grails.version application.properties | cut -d= -f 2)
 
-  if [ "${current}" != "${required}" ] ; then
+  if [ "${required}" != "" -a "${current}" != "${required}" ] ; then
     echo "Switching to grails ${required}"
     gvm use grails ${required}
   fi
