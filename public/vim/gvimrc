@@ -1,5 +1,5 @@
 macmenu &File.New\ Window key=<nop>
-nnoremap <D-n> :CommandT<CR>
+nnoremap <D-n> :CtrlP<CR>
 
 macmenu &Tools.Make key=<nop>
 nnoremap <D-b> gf

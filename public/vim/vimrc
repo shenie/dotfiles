@@ -24,9 +24,10 @@ Plugin 'gmarik/vundle'
 " Plugin 'user/L9', {'name': 'newL9'}
 
 " Git plugin not hosted on GitHub
-Plugin 'git://git.wincent.com/command-t.git'
+" Plugin 'git://git.wincent.com/command-t.git'
 
 " plugin on GitHub repo
+Plugin 'kien/ctrlp.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -46,7 +47,6 @@ Plugin 'shenie/AutoClose'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
-
 
 
 silent! call pathogen#runtime_append_all_bundles()
@@ -73,7 +73,7 @@ if has("gui_macvim")
     let s:path = system("echo echo VIMPATH'${PATH}' | $SHELL -l")
     let $PATH = matchstr(s:path, 'VIMPATH\zs.\{-}\ze\n')
   endif
-  nnoremap <D-N> :CommandTFlush<CR>:CommandT<CR>
+  nnoremap <D-N> :CtrlP<CR>
 else
 " colorscheme midnight
 endif
@@ -212,18 +212,18 @@ vmap <D-S-Down> ]egv
 vnoremap <D-d> yPgv<Esc>
 nnoremap <D-d> yymqP`q
 
-nmap <Leader>e :CommandTFlush<cr>\|:CommandT %%<cr>
+nmap <Leader>e :CtrlP %%<cr>
 
 " Rails project navigation shortcuts
-nnoremap <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
-nnoremap <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
-nnoremap <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
-nnoremap <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
-nnoremap <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
-nnoremap <leader>gs :CommandTFlush<cr>\|:CommandT app/assets/stylesheets<cr>
-nnoremap <leader>gj :CommandTFlush<cr>\|:CommandT app/assets/javascripts<cr>
-nnoremap <leader>gd :CommandTFlush<cr>\|:CommandT db/migrate<cr>
-nnoremap <leader>gt :CommandTFlush<cr>\|:CommandT spec<cr>
+nnoremap <leader>gv :CtrlP app/views<cr>
+nnoremap <leader>gc :CtrlP app/controllers<cr>
+nnoremap <leader>gm :CtrlP app/models<cr>
+nnoremap <leader>gh :CtrlP app/helpers<cr>
+nnoremap <leader>gl :CtrlP lib<cr>
+nnoremap <leader>gs :CtrlP app/assets/stylesheets<cr>
+nnoremap <leader>gj :CtrlP app/assets/javascripts<cr>
+nnoremap <leader>gd :CtrlP db/migrate<cr>
+nnoremap <leader>gt :CtrlP spec<cr>
 
 nnoremap <leader>gr :topleft :split config/routes.rb<cr>
 nnoremap <leader>gg :topleft 100 :split Gemfile<cr>
