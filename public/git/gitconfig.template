@@ -15,6 +15,7 @@
   who = log --format="'%ai %h %aN %s'"
 [core]
   excludesfile = <%= PUBLIC_DIR %>/git/gitignore
+  pager = less -R -i
 [branch]
   autosetuprebase = always
 [log]
