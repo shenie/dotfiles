@@ -28,3 +28,5 @@
 	default = current
 [merge]
 	defaultToUpstream = true
+[url "https://github"]
+	insteadOf = git://github
