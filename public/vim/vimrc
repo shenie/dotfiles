@@ -24,7 +24,6 @@ Plugin 'gmarik/vundle'
 " Plugin 'user/L9', {'name': 'newL9'}
 
 " Git plugin not hosted on GitHub
-Plugin 'git://git.wincent.com/command-t.git'
 
 " plugin on GitHub repo
 Plugin 'Valloric/YouCompleteMe'
@@ -43,6 +42,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'altercation/solarized'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'shenie/AutoClose'
+Plugin 'wincent/command-t'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
