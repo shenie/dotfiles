@@ -1,2 +1,2 @@
-export PATH="/Users/andy/.rbenv/shims:/Users/andy/.rbenv/bin:$PATH"
+export PATH="/Users/andy/.rbenv/versions/2.3.1/bin:/Users/`whoami`/.rbenv/bin:$PATH"
 export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:/usr/local/mysql/lib/"
