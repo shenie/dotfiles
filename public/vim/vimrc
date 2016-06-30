@@ -91,7 +91,7 @@ endif
 
 " hi CursorLine guibg=grey
 
-set wildignore+=*.o,*.obj,.git,*.class,vendor,*.log,*.jar,tmp,public/assets
+set wildignore+=*.o,*.obj,.git,*.class,vendor,*.log,*.jar,tmp,public/assets,.DS_Store
 
 " set cursorline
 
