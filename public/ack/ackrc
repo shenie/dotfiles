@@ -1,5 +1,6 @@
 
 --type-add=html=.haml
+--type-add=html=.slim
 --type-add=css=.scss
 --type-add=css=.sass
 --type-add=css=.jbuilder
