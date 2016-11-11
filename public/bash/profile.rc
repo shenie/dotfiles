@@ -1,6 +1,7 @@
 stty -ixon
 
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 
 export DYLD_LIBRARY_PATH="/usr/local/mysql/lib/"
 
@@ -31,7 +32,7 @@ export HISTSIZE=10000
 export HISTFILESIZE=10000
 export HISTTIMEFORMAT="%F %T "
 
-export BUNDLER_EDITOR=mate
+export BUNDLER_EDITOR=subl
 
 # comment out less setting because it is screwing up git pager
 # export LESS=-i
@@ -87,6 +88,7 @@ complete -C $HOME/.completion_scripts/grails_completion -o default grails
 complete -C $HOME/.completion_scripts/ssh_completion -o default ssh
 complete -C $HOME/.completion_scripts/ssh_completion -o default scp
 complete -C $HOME/.completion_scripts/list_apps_completion -o default list-apps.sh
+. $HOME/.completion_scripts/npm
 
 # From http://blog.peepcode.com/tutorials/2009/shell-method-missing
 trap 'if ! type -t $BASH_COMMAND >/dev/null; then ~/bin/shell_method_missing.rb $BASH_COMMAND; fi' DEBUG
