@@ -1,6 +1,6 @@
 stty -ixon
 
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home
+# export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 
 export DYLD_LIBRARY_PATH="/usr/local/mysql/lib/"
@@ -113,4 +113,3 @@ growldone() {
     PROMPT_MEMO=Command
   fi
 }
-
