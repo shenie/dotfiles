@@ -16,7 +16,7 @@
 [core]
   excludesfile = <%= PUBLIC_DIR %>/git/gitignore
   pager = less -R -i
-  editor = /usr/bin/vi
+  editor = /usr/bin/vim
 [branch]
   autosetuprebase = always
 [log]
