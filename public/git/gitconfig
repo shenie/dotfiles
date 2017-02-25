@@ -1,8 +1,8 @@
 [color]
   ui = auto
 [user]
-  name = <%= SETTINGS['name'] %>
-  email = <%= SETTINGS['email'] %>
+  name = Andy Shen
+  email = andy@shenie.net
 [apply]
   whitespace = nowarn
 [alias]
@@ -14,9 +14,9 @@
   lg = log --graph --decorate --format='%Cred%h%C(yellow)%d%Creset %s %Cgreen(%cr) %C(cyan)%aN%Creset'
   who = log --format="'%ai %h %aN %s'"
 [core]
-  excludesfile = <%= PUBLIC_DIR %>/git/gitignore
+  excludesfile = /User/andy/.gitignore
   pager = less -R -i
-  editor = /usr/bin/vim
+  editor = mvim -v
 [branch]
   autosetuprebase = always
 [log]
