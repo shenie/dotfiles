@@ -12,7 +12,6 @@ HOME = ENV['HOME']
 INSTALL_DIR = File.expand_path(File.dirname(__FILE__))
 PRIVATE_DIR = "#{INSTALL_DIR}/private"
 PUBLIC_DIR = "#{INSTALL_DIR}/public"
-GENERATED_DIR = "#{INSTALL_DIR}/generated"
 BIN_DIR = "#{HOME}/bin"
 HOST = `hostname`.split('.').first.strip
 
@@ -33,15 +32,6 @@ def install_link(src, file)
     ln_s(src, link)
     printf "    Installed #{link} -> #{src}\n"
   end
-end
-
-
-# Regenerate templated files
-rm_rf GENERATED_DIR
-mkdir "#{GENERATED_DIR}"
-
-File.open "#{GENERATED_DIR}/gitconfig", 'w' do |f|
-  f.write(ERB.new(File.readlines("#{PUBLIC_DIR}/git/gitconfig.template").join).result)
 end
 
 # Install copied files
