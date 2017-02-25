@@ -14,7 +14,7 @@
   lg = log --graph --decorate --format='%Cred%h%C(yellow)%d%Creset %s %Cgreen(%cr) %C(cyan)%aN%Creset'
   who = log --format="'%ai %h %aN %s'"
 [core]
-  excludesfile = /User/andys/.gitignore
+  excludesfile = /Users/andy/.gitignore
   pager = less -R -i
   editor = mvim -v
 [branch]
