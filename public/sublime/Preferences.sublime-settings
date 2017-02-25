@@ -1,5 +1,6 @@
 {
 	"color_scheme": "Packages/Boxy Theme/schemes/Boxy Solarized Light.tmTheme",
+	"ensure_newline_at_eof_on_save": true,
 	"font_size": 16,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
@@ -15,5 +16,6 @@
 	"theme_tab_selected_filled": true,
 	"theme_tabset_line_visible": true,
 	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true,
 	"word_wrap": "auto"
 }

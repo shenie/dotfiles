@@ -32,7 +32,7 @@ export HISTSIZE=10000
 export HISTFILESIZE=10000
 export HISTTIMEFORMAT="%F %T "
 
-export BUNDLER_EDITOR=subl
+export BUNDLER_EDITOR=atom
 
 # comment out less setting because it is screwing up git pager
 # export LESS=-i
@@ -45,10 +45,7 @@ alias dir='ls -l'
 alias ls='ls -aF'
 alias mm=mvim
 
-export ANT_HOME=/usr/share/ant
-
 alias be='bundle exec'
-alias apr='touch tmp/restart.txt; sudo apachectl restart'
 
 alias gs='git st'
 alias gg='git lg'
@@ -58,58 +55,11 @@ alias gp='git push'
 alias gd='git diff'
 alias gba='git branch -a'
 alias gdc='git diff --cached'
-alias gcm='git checkout master'
 alias gka='gitk --all'
 alias gcv='git cherry -v master'
 alias gnp='git cherry -v'
 alias gsb='git show-branch'
 
-
-# make performance better by doing a 
-# alias gr='git repack -a -d'
-
-pushdgem() {
-  pushd `gem which $1 | tail -1 | xargs dirname`
-  cd ..
-}
-
-tf() {
-  echo -n -e "\033]0;${1}\007"; tail -f $1
-}
-
-ta() {
-  tmux attach -t `tmux ls | grep ${1} | head -1 | cut -d':' -f1`
-}
-
 # Completions
-complete -C $HOME/.completion_scripts/rake_completion -o default rake
-complete -C $HOME/.completion_scripts/thor_completion -o default thor
-complete -C $HOME/.completion_scripts/grails_completion -o default grails
 complete -C $HOME/.completion_scripts/ssh_completion -o default ssh
 complete -C $HOME/.completion_scripts/ssh_completion -o default scp
-complete -C $HOME/.completion_scripts/list_apps_completion -o default list-apps.sh
-. $HOME/.completion_scripts/npm
-
-# From http://blog.peepcode.com/tutorials/2009/shell-method-missing
-trap 'if ! type -t $BASH_COMMAND >/dev/null; then ~/bin/shell_method_missing.rb $BASH_COMMAND; fi' DEBUG
-
-
-# Slightly modified from http://gist.github.com/280202
-_growl_prompt_command() {
-  local laststatus=$?
-  eval $PREV_PROMPT_COMMAND
-  growl -H localhost -n Shell -m "$PROMPT_MEMO exited with $laststatus" Shell
-  PROMPT_COMMAND=$PREV_PROMPT_COMMAND
-  PREV_PROMPT_COMMAND=
-  PROMPT_MEMO=
-}
- 
-growldone() {
-  PREV_PROMPT_COMMAND=$PROMPT_COMMAND
-  PROMPT_COMMAND=_growl_prompt_command
-  if [ $# -gt 0 ]; then
-    PROMPT_MEMO=$@
-  else
-    PROMPT_MEMO=Command
-  fi
-}
