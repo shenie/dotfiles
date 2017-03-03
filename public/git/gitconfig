@@ -16,7 +16,6 @@
 [core]
   excludesfile = /Users/andy/.gitignore
   pager = less -R -i
-  editor = mvim -v
 [branch]
   autosetuprebase = always
 [log]
