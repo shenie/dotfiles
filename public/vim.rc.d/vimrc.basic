@@ -1,0 +1,139 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+let macvim_skip_cmd_opt_movement = 1
+let mapleader = ","
+
+syntax on
+
+if has("gui_macvim")
+  set guifont=Menlo_Regular:h14
+  set guicursor=n:blinkon0
+  if $SHELL =~ '/\(sh\|csh\|bash\|tcsh\|zsh\)$'
+    let s:path = system("echo echo VIMPATH'${PATH}' | $SHELL -l")
+    let $PATH = matchstr(s:path, 'VIMPATH\zs.\{-}\ze\n')
+  endif
+  nnoremap <D-N> :CommandTFlush<CR>:CommandT<CR>
+endif
+
+set wildignore+=*.o,*.obj,.git,*.class,vendor,*.log,*.jar,tmp,public/assets,.DS_Store,*/node_modules
+
+set splitbelow
+set splitright
+
+set autoindent
+set autowriteall
+set autoread
+
+set tabstop=2                     " Global tab width.
+set shiftwidth=2                  " And again, related.
+set expandtab                     " Use spaces instead of tabs
+
+set showcmd                       " Display incomplete commands.
+set showmode                      " Display the mode you're in.
+
+set backspace=indent,eol,start    " Intuitive backspacing.
+
+set history=2000
+
+set nowrap
+set linebreak                     "wrap lines at convenient points
+
+set hidden                        " Handle multiple buffers better.
+
+set wildmenu                      " Enhanced command line completion.
+set wildmode=list:longest         " Complete files like a shell.
+
+set ignorecase                    " Case-insensitive searching.
+set smartcase                     " But case-sensitive if expression contains a capital letter.
+
+set title
+set number                        " Show line numbers.
+set ruler                         " Show cursor position.
+
+set incsearch                     " Highlight matches as you type.
+set hlsearch                      " Highlight matches.
+
+set noswapfile                    " Swap files are annoying"
+set nobackup                      " Don't make a backup before overwriting a file.
+set nowritebackup                 " And again.
+set directory=/tmp//,.            " Keep swap files in one location
+
+set statusline=%<[%n]\ %F\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+set laststatus=2                  " Show the status line all the time
+hi statusline guibg=red
+
+set foldcolumn=2
+set foldlevel=20
+
+" make tab completion for files/buffers act like bash
+set wildmenu
+set shell=bash
+set switchbuf=useopen
+
+inoremap jk <esc>
+
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+
+noremap <Leader>n :Ve<CR>
+noremap <Leader>h :He<CR>
+
+nnoremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
+nnoremap <Leader>tn :tabnew <C-R>=expand("%:p:h") . "/" <CR>
+
+cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
+
+inoremap <S-Enter> <Esc>o
+
+if has("autocmd")
+  augroup mygroup
+    autocmd!
+    autocmd bufwritepost *vimrc source $MYVIMRC
+  augroup END
+endif
+
+" Buffer related shortcuts
+:noremap <D-e> :BufExplorer<CR>
+" Jump between the last 2 buffers
+nnoremap <leader><leader> <C-^>
+" Go to previous buffer and delete this current buffer
+nnoremap <leader>q <C-^>:bd#<CR>
+
+:noremap <F2> :noh<CR>
+:noremap <F3> :set wrap!<CR>
+
+" highlight current word without moving cursor
+:noremap # mq*`q
+
+" Move cursor up/down displayed lines (i.e. when long line is wrapped)
+noremap <D-j> gj
+noremap <D-k> gk
+
+" TextMate style indentation
+noremap <D-[> <<
+noremap <D-]> >>
+vnoremap <D-[> <gv
+vnoremap <D-]> >gv
+
+" Bubble single line
+map <D-S-Up> [e
+map <D-S-Down> ]e
+
+" Bubble multiple lines
+vmap <D-S-UP> [egv
+vmap <D-S-Down> ]egv
+
+" IntelliJ line duplication
+vnoremap <D-d> yPgv<Esc>
+nnoremap <D-d> yymqP`q
+
+nmap <Leader>e :CommandTFlush<cr>\|:CommandT %%<cr>
+
+" Split window movement shortcuts
+noremap <D-Right> <C-W>l
+noremap <D-Left> <C-W>h
+noremap <D-Up> <C-W>k
+noremap <D-Down> <C-W>j
+
+au BufEnter /private/tmp/crontab.* setl backupcopy=yes
+
