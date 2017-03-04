@@ -257,3 +257,5 @@ endfunction
 " inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 " inoremap <s-tab> <c-n>
 
+au BufEnter /private/tmp/crontab.* setl backupcopy=yes
+
