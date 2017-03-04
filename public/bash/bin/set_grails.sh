@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ -e application.properties ] ; then
-  current=$(realpath $GRAILS_HOME |cut -d'/' -f7)
+  current=$(readlink $GRAILS_HOME |cut -d'/' -f7)
 
   required=$(grep grails.version application.properties | cut -d= -f 2)
 
@@ -12,7 +12,7 @@ if [ -e application.properties ] ; then
 fi
 
 if [ -e gradle.properties ] ; then
-  current=$(realpath $GRAILS_HOME |cut -d'/' -f7)
+  current=$(readlink $GRAILS_HOME |cut -d'/' -f7)
 
   required=$(grep grailsVersion gradle.properties | cut -d= -f 2)
 
@@ -21,4 +21,3 @@ if [ -e gradle.properties ] ; then
     sdk use grails ${required}
   fi
 fi
-
