@@ -1,6 +1,6 @@
 #!/bin/bash
 
-current=$(sdk current grails | cut -d' ' -f4)
+current=$(sdk current grails | tail -1 | cut -d' ' -f4)
 
 if [ -e application.properties ] ; then
 
