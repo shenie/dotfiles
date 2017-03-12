@@ -6,7 +6,7 @@ export GIT_PS1_SHOWSTASHSTATE=y
 export GIT_PS1_SHOWUNTRACKEDFILES=y
 export GIT_PS1_SHOWUPSTREAM="auto verbose"
 
-export PS1='\[\e[33m\][$(date "+%H:%M")] \w\[\e[0m\] \[\e[35m\]$(__git_ps1 "[%s]")\[\e[33m\]>\[\e[0m\] '
+export PS1='\[\e[33m\][$(date "+%H:%M")] \w\[\e[0m\] \[\e[35m\]$(__git_ps1 "[%s]")\[\e[31m\]${DOCKER_MACHINE_NAME:+[$DOCKER_MACHINE_NAME]}\[\e[33m\]>\[\e[0m\] '
 
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;33'
