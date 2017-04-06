@@ -10,7 +10,7 @@ if (account == 'unset') {
   console.log("unset AWS_ACCESS_KEY_ID")
   console.log("unset AWS_SESSION_TOKEN")
 
-  console.log("# eval $(node assume-role.js unset)")
+  console.log("# eval $(node ~/bin/assume-role.js unset)")
 
   return
 }
@@ -27,5 +27,5 @@ exec(`aws sts assume-role --role-arn 'arn:aws:iam::${account}:role/Admin' --role
   console.log(`export AWS_ACCESS_KEY_ID=${payload.Credentials.AccessKeyId}`)
   console.log(`export AWS_SESSION_TOKEN=${payload.Credentials.SessionToken}`)
 
-  console.log(`# eval $(node assume-role.js ${account})`)
+  console.log(`# eval $(node ~/bin/assume-role.js ${account})`)
 })
