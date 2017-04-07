@@ -2,10 +2,9 @@
 
 set -ex
 
-find . -name .git -type d -depth 2 | while read d \
+find . -name .git -type d -depth 2 | while read d;
 do
-  x=`dirname $d`
-  cd $x
+  cd `dirname $d`
   git pull
   cd -
 done
