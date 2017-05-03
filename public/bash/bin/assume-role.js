@@ -8,6 +8,7 @@ let account = process.argv[2]
 let mfaCode = process.argv[3]
 
 if (account == 'unset') {
+  console.log("unset AWS_ACCT")
   console.log("unset AWS_SECRET_ACCESS_KEY")
   console.log("unset AWS_ACCESS_KEY_ID")
   console.log("unset AWS_SESSION_TOKEN")
@@ -23,6 +24,7 @@ exec(`aws sts assume-role --serial-number ${accounts.userArn} --token-code ${mfa
 
   let payload = JSON.parse(stdout)
 
+  console.log(`export AWS_ACCT=${account}`)
   console.log(`export AWS_SECRET_ACCESS_KEY=${payload.Credentials.SecretAccessKey}`)
   console.log(`export AWS_ACCESS_KEY_ID=${payload.Credentials.AccessKeyId}`)
   console.log(`export AWS_SESSION_TOKEN=${payload.Credentials.SessionToken}`)
