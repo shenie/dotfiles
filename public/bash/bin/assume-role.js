@@ -16,7 +16,7 @@ if (account == 'unset') {
   return
 }
 
-exec(`aws sts assume-role --serial-number ${accounts.userArn} --token-code ${mfaCode} --role-arn 'arn:aws:iam::${accounts.mappings[account].acct}:role/${accounts.mappings[account].role}' --role-session-name ashen-session-abc`, (err, stdout, stderr) => {
+exec(`aws sts assume-role --serial-number ${accounts.userArn} --token-code ${mfaCode} --role-arn 'arn:aws:iam::${accounts.mappings[account].acct}:role/${accounts.mappings[account].role}' --duration-seconds 28800 --role-session-name ashen-session-abc`, (err, stdout, stderr) => {
 
   if (err) {
     throw new Error(`failed to run assume-role: ${stderr}` , err)
