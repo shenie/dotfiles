@@ -43,6 +43,7 @@ Plugin 'altercation/solarized'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'shenie/AutoClose'
 Plugin 'wincent/command-t'
+Plugin 'mileszs/ack.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -154,7 +155,7 @@ set switchbuf=useopen
 "autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
 
 inoremap jk <esc>
-" inoremap <C-l> <space>=> 
+" inoremap <C-l> <space>=>
 
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
@@ -258,4 +259,3 @@ endfunction
 " inoremap <s-tab> <c-n>
 
 au BufEnter /private/tmp/crontab.* setl backupcopy=yes
-
