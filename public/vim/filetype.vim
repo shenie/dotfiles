@@ -6,5 +6,6 @@
 	  au! BufRead,BufNewFile *.rhtml  setfiletype html
 	  au! BufRead,BufNewFile *.rake   setfiletype ruby
 	  au! BufRead,BufNewFile irbrc    setfiletype ruby
+	  au! BufRead,BufNewFile *.ts    setfiletype javascript
 	augroup END
 

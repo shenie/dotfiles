@@ -10,3 +10,4 @@ tags
 brakeman.html
 chromedriver.log
 .elasticbeanstalk
+*.ipr
