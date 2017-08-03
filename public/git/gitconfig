@@ -17,7 +17,7 @@
   excludesfile = /Users/andy/.gitignore
   pager = less -R -i
 [branch]
-  autosetuprebase = always
+	autosetuprebase = always
 [log]
   decorate = true
 [showbranch]
@@ -30,3 +30,5 @@
 	defaultToUpstream = true
 [url "https://github"]
 	insteadOf = git://github
+[pull]
+	rebase = true
