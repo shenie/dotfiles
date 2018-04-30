@@ -45,5 +45,6 @@ alias gsb='git show-branch'
 # Completions
 complete -C $HOME/.completion_scripts/ssh_completion -o default ssh
 complete -C $HOME/.completion_scripts/ssh_completion -o default scp
+# source <(kubectl completion bash)
 
 echo "base profile loaded...."
