@@ -8,7 +8,7 @@
 [alias]
   co = checkout
   st = status -s -b
-  ci = commit
+  ci = commit --no-verify
   sb = show-branch
   up = !git fetch origin && git rebase origin/master
   lg = log --graph --decorate --format='%Cred%h%C(yellow)%d%Creset %s %Cgreen(%cr) %C(cyan)%aN%Creset'
