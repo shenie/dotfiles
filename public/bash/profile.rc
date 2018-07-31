@@ -17,7 +17,12 @@ function get_aws_acct {
   fi
 }
 
-export PS1='\[\e[33m\][$(date "+%H:%M")] \w\[\e[0m\] \[\e[35m\]$(__git_ps1 "[%s]")\[\e[31m\]$(get_aws_acct)${DOCKER_MACHINE_NAME:+ [docker:$DOCKER_MACHINE_NAME]}\[\e[33m\]>\[\e[0m\] '
+function get_k8s_context {
+  context=$(awk '/current-context/ { print $2 }' ~/.kube/config)
+  echo "(${context})"
+}
+
+export PS1='\[\e[33m\][$(date "+%H:%M")] \w\[\e[0m\] \[\e[35m\]$(__git_ps1 "[%s]")\[\e[31m\]$(get_k8s_context)$(get_aws_acct)${DOCKER_MACHINE_NAME:+ [docker:$DOCKER_MACHINE_NAME]}\[\e[33m\]>\[\e[0m\] '
 
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;33'
