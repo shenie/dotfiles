@@ -17,3 +17,4 @@ node_modules
 tags
 terraform.tfstate*
 x-local
+.vscode
