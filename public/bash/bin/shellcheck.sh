@@ -14,5 +14,5 @@ fi
 
 docker pull koalaman/shellcheck:stable
 
-docker run -v "$PWD:/mnt" koalaman/shellcheck:stable $file_to_check
+docker run -v "$(dirname $file_to_check):/mnt" koalaman/shellcheck:stable $(basename $file_to_check)
 
