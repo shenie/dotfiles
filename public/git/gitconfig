@@ -32,3 +32,5 @@
 	insteadOf = git://github
 [pull]
 	rebase = true
+[url "https://github.com/siteminder-au"]
+	insteadOf = git@github.com:siteminder-au
