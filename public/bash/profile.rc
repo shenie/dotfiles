@@ -1,6 +1,7 @@
 stty -ixon
 
 . ~/.git-completion.bash
+. ~/.git-prompt.sh
 export GIT_PS1_SHOWDIRTYSTATE=y
 export GIT_PS1_SHOWSTASHSTATE=y
 export GIT_PS1_SHOWUNTRACKEDFILES=y
